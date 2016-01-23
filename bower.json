@@ -1,0 +1,23 @@
+{
+  "name": "bilgiShuttleWebapp",
+  "description": "Web Application of Bilgi Shuttle",
+  "main": "",
+  "authors": [
+    "zebrasinpyjamas"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-grid": "bootstrap-grid-sass#~1.1.0"
+  }
+}
