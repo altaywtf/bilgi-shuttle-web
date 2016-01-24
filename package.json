@@ -71,6 +71,7 @@
     "normalize.css": "^3.0.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
-    "react-router": "^1.0.3"
+    "react-router": "^1.0.3",
+    "superagent": "^1.7.1"
   }
 }

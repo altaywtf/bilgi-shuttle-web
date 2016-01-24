@@ -1,4 +1,3 @@
-require('normalize.css');
 require('styles/App.scss');
 
 import React from 'react';
@@ -10,10 +9,15 @@ import React from 'react';
 class App extends React.Component {
   render() {
     return (
-      <div className="index">
-      	<h1>Bilgi Shuttle v0.1</h1>
-        {this.props.children}
-      </div>
+      <main>
+      	<header>
+      		Bilgi Shuttle v.0.1
+      	</header>
+
+      	<section id="content">
+      		{this.props.children}
+      	</section>
+      </main>
     );
   }
 }
