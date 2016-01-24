@@ -1,17 +1,14 @@
 require('styles/App.scss');
 
 import React from 'react';
-
-// Static Calls
-// let yeomanImage = require('../images/yeoman.png');
-// <img src={yeomanImage} alt="Yeoman Generator" />
+import { IndexLink } from 'react-router';
 
 class App extends React.Component {
   render() {
     return (
       <main>
       	<header>
-      		<h1>Bilgi Shuttle v.0.1.</h1>
+      		<h1><IndexLink to="/">Bilgi Shuttle v.0.1.</IndexLink></h1>
       	</header>
 
       	<section id="content">

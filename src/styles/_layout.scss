@@ -1,14 +1,22 @@
 body {
 	background: $bs-bg;
-	a { text-decoration: none; }
 }
 
 header {
 	background: $bs-red;
 	text-align: center;
 
-	h1 {
+	a {
 		color: white;
+
+		&:hover, &:active, &:focus {
+			color: white;
+			text-decoration: none;
+			text-transform: none;
+		}
+	}
+
+	h1 {
 		font-weight: 800;
 		font-size: 3rem;
 		margin: 0 auto;
@@ -17,33 +25,22 @@ header {
 }
 
 #content {
-	@extend .container;
+	a { text-decoration: none; }
 
-	.nodes {		
-    	@include make-row();
-    	margin-top: 10px;
+	.nodes {	
+    	@extend .parrent;
 
 		.node {
-			@include make-xs-column(12);
-	   		@include make-sm-column(6);
-	    	@include make-md-column(3);
+			@extend .child;
+			@include make-xs-column(6);
+			@include make-sm-column(4);
+			@include make-md-column(3);
 
-	    	margin: 15px 0;
+
 
 			.node-details {
-				display: inline-flex;
-				align-items: center;
-				justify-content: center; 
-				
-				min-height: 200px;
-				width: 100%;
-				
-				background: white;
+				@extend .grandchild;
 
-				border-radius: 1px;
-				border-bottom: 2px solid $bs-red;
-				
-				box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   				transition: all 0.2s ease-in-out;
 
   				&:hover{
@@ -51,12 +48,93 @@ header {
   				}
 
 				p {
-					font-size: 2rem;
+					font-size: 2.2rem;
 					color: $bs-black;
+					display: block;
+				}
+
+				img {
+					margin: 40px auto 20px auto;
+					height: 80px;
 				}
 			}
 
 		}
+
+	}
+
+	.location-name {
+		@extend .container-fluid;
+
+		background: $bs-black;
+		text-align: center;
+
+		button {
+			@extend .btn;
+			background: transparent;
+			border: 1px solid #424242;
+			color: white;
+			margin-top: 15px;
+
+			&:hover{
+				color: white;
+				background: #424242;
+			}
+		}
+
+		h2 {
+			color: white;
+			font-weight: 800;
+			font-size: 2rem;
+			margin: 0 auto;
+			padding: 20px 0;
+		}
+	}
+
+	.routes {
+		@extend .parrent;
+
+		.route {
+			@extend .child;
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+	    	@include make-md-column(6);
+
+	    	.route-details{
+				@extend .grandchild;
+
+				position: relative;
+    			overflow: hidden;
+
+				img {
+					height: 80px;
+					position: absolute;
+				    left: 0;
+				    top: 0;
+				    opacity: 0.1;
+				    margin: auto;
+				}
+
+				h3 {
+					font-weight: 800;
+					font-size: 2.4rem;
+					margin-bottom: 30px;
+				}
+
+				h4 {
+					font-weight: 800;
+					font-size: 2.2rem;
+					color: $bs-red;
+					margin-bottom: 30px;
+				}
+
+				p {
+					padding: 0 40px;
+				}
+
+	    	}
+
+	    } 
 
 	}
 
