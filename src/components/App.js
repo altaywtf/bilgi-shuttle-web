@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <main>
       	<header>
-      		Bilgi Shuttle v.0.1
+      		<h1>Bilgi Shuttle v.0.1.</h1>
       	</header>
 
       	<section id="content">

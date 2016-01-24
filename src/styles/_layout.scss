@@ -1,0 +1,66 @@
+body {
+	background: $bs-bg;
+}
+
+header {
+	background: $bs-red;
+	text-align: center;
+
+	h1 {
+		color: white;
+		font-weight: 800;
+		font-size: 3rem;
+		margin: 0 auto;
+		padding: 30px 0;
+	}
+}
+
+#content {
+	@extend .container;
+
+	a {
+		text-decoration: none;
+	}
+
+	.nodes {		
+    	@include make-row();
+    	margin-top: 10px;
+
+		.node {
+			@include make-xs-column(12);
+	   		@include make-sm-column(6);
+	    	@include make-md-column(3);
+
+	    	margin: 15px 0;
+
+			.node-details {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center; 
+				
+				min-height: 200px;
+				width: 100%;
+				
+				background: white;
+
+				border-radius: 1px;
+				border-bottom: 2px solid $bs-red;
+				
+				box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  				transition: all 0.2s ease-in-out;
+
+  				&:hover{
+				box-shadow: 0 6px 6px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  				}
+
+				p {
+					font-size: 2rem;
+					color: $bs-black;
+				}
+			}
+
+		}
+
+	}
+
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import ajax from 'superagent';
+import { Link } from 'react-router';
 
 class List extends React.Component {
 
@@ -21,16 +22,32 @@ class List extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<ul>
+			<div className="nodes">
 				{this.state.nodes.map((node, index) => {
+					let slugify = text => {
+						let trMap = { 'çÇ':'c', 'ğĞ':'g', 'şŞ':'s', 'üÜ':'u', 'ıİ':'i', 'öÖ':'o' };
+						for (let key in trMap){
+							text = text.replace(new RegExp('['+key+']','g'), trMap[key]);
+						}
+						return  text.replace(/[^-a-zA-Z0-9\s]+/ig, '') // remove non-alphanumeric chars
+					                .replace(/\s/gi, '-') // convert spaces to dashes
+					                .replace(/[-]+/gi, '-') // trim repeated dashes
+					                .toLowerCase();
+					};
+
+					const nodeSlug = slugify(node.name);
+					const nodeName = node.name;
+
 					return (
-						<li key={index}>
-						<strong>{node.name}</strong>
-						</li>
+						<div className="node" key={index}>
+							<Link to={`/location/${nodeSlug}`}>
+								<div className="node-details">
+									<p>{nodeName}</p>
+								</div>
+							</Link>
+						</div>
 						)
 				})}
-				</ul>
 			</div>
 		);
 	}
