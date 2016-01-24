@@ -32,6 +32,12 @@ $ yo react-webpack:component my/namespaced/components/name
 $ npm start # or
 $ npm run serve
 
+# Application will be served on 
+http://localhost:8080
+
+# Using React-Hot-Loader (Similar to LiveReload)
+http://localhost:8080/webpack-dev-server
+
 # Start the dev-server with the dist version
 $ npm run serve:dist
 
