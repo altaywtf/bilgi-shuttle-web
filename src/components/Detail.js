@@ -1,6 +1,7 @@
 import React from 'react';
 import ajax from 'superagent';
 import BackButton from './utils/BackButton';
+import Timer from './utils/Timer';
 
 const baseURL = 'http://localhost:8000';
 
@@ -24,6 +25,26 @@ class Detail extends React.Component {
 	}
 
 	render() {
+
+		let routeListing = this.state.routes.map((route, index) => {
+			const destination = route.destination;
+			// const destinationImg = baseURL + route.destination_image;
+			const rawData = route.raw_data;
+			let timeRemaining = route.next.in_secs;
+
+			// startTimer(timeRemaining);
+
+			return (
+				<div className="route" key={index}>
+					<div className="route-details">
+						<h3>{destination}</h3>
+						<h4>{route.next_next_one == 'DONE' ? 'Done for Today!' : (route.next.ring == true ? 'Ring' : <Timer seconds={timeRemaining}/>)}</h4>
+						<p>{rawData}</p>
+					</div>
+				</div>
+				)
+		});
+
 		return (
 			<div>
 				<div className="location-name">
@@ -39,23 +60,7 @@ class Detail extends React.Component {
 
 				<div className="container">
 					<div className="routes">
-						{this.state.routes.map((route, index) => {
-							const destination = route.destination;
-							// const destinationImg = baseURL + route.destination_image;
-							const rawData = route.raw_data;
-
-							let timeRemaining = route.next.in_secs;
-
-							return (
-								<div className="route" key={index}>
-									<div className="route-details">
-										<h3>{destination}</h3>
-										<h4>{route.next_next_one == 'DONE' ? 'Done for Today!' : (route.next.ring == true ? 'Ring' : timeRemaining)}</h4>
-										<p>{rawData}</p>
-									</div>
-								</div>
-								)
-						})}
+						{routeListing}
 					</div>
 				</div>
 			</div>

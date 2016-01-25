@@ -1,5 +1,5 @@
 ##Bilgi Shuttle Web Application
 
-![](http://cdn.makeagif.com/media/6-13-2015/sxuekh.gif)
-
 [Documentation](docs)
+
+![](http://img1.wikia.nocookie.net/__cb20140522072446/adventuretimewithfinnandjake/images/2/20/Tumblr_m8i1dxS74k1rdqb5lo1_500.gif)
