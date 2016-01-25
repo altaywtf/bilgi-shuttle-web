@@ -30,6 +30,7 @@ class Detail extends React.Component {
 			const destination = route.destination;
 			// const destinationImg = baseURL + route.destination_image;
 			const rawData = route.raw_data;
+			const nextOne = route.next.next_next_one;
 			let timeRemaining = route.next.in_secs;
 
 			// startTimer(timeRemaining);
@@ -38,8 +39,9 @@ class Detail extends React.Component {
 				<div className="route" key={index}>
 					<div className="route-details">
 						<h3>{destination}</h3>
-						<h4>{route.next_next_one == 'DONE' ? 'Done for Today!' : (route.next.ring == true ? 'Ring' : <Timer seconds={timeRemaining}/>)}</h4>
+						<h4>{nextOne == 'DONE' ? 'Done for Today!' : (route.next.ring == true ? 'Ring' : <Timer seconds={timeRemaining}/>)}</h4>
 						<p>{rawData}</p>
+						<p>{nextOne == 'DONE' ? ' ' : 'NEXT: '+nextOne}</p>
 					</div>
 				</div>
 				)

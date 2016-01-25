@@ -40,6 +40,7 @@ header {
 
 			.node-details {
 				@extend .grandchild;
+				min-height: 200px;
 
   				transition: all 0.2s ease-in-out;
 
@@ -103,6 +104,8 @@ header {
 	    	.route-details{
 				@extend .grandchild;
 
+				min-height: 250px;
+
 				position: relative;
     			overflow: hidden;
 
@@ -125,11 +128,11 @@ header {
 					font-weight: 800;
 					font-size: 2.2rem;
 					color: $bs-red;
-					margin-bottom: 30px;
+					margin-bottom: 20px;
 				}
 
 				p {
-					padding: 0 40px;
+					padding: 5px 40px;
 				}
 
 	    	}
