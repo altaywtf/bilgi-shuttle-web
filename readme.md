@@ -21,15 +21,6 @@ $ npm install
 
 ##Usage
 ```bash
-# Show all locations
-http://localhost:8080/#/
-
-# Show specific location (santral, dolapdere, kustepe, kabatas, mecidiyekoy, halicioglu, pangalti)
-http://localhost:8080/#/location:<name>
-```
-
-##Contribution
-```bash
 # Start for development
 $ npm start # or
 $ npm run serve
@@ -39,6 +30,12 @@ http://localhost:8080
 
 # Using React-Hot-Loader (Similar to LiveReload)
 http://localhost:8080/webpack-dev-server
+
+# Show all locations
+http://localhost:8080/#/
+
+# Show specific location (santral, dolapdere, kustepe, kabatas, mecidiyekoy, halicioglu, pangalti)
+http://localhost:8080/#/location:<name>
 
 # Start the dev-server with the dist version
 $ npm run serve:dist
