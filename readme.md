@@ -21,6 +21,8 @@ $ npm install
 
 ##Usage
 ```bash
+# Note that bilgi-shuttle-api should be running at the same time with this app to get shuttle data.
+
 # Start for development
 $ npm start # or
 $ npm run serve
