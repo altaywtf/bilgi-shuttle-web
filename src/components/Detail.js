@@ -36,7 +36,7 @@ class Detail extends React.Component {
 				<div className="route" key={index}>
 					<div className="route-details">
 						<h3>{destination}</h3>
-						<h4>{nextOne == 'DONE' ? 'Done for Today!' : (route.next.ring == true ? 'Ring' : <Timer seconds={timeRemaining}/>)}</h4>
+						<h4>{timeRemaining ? (route.next.ring == true ? 'Ring' : <Timer seconds={timeRemaining}/>) : 'Done For Today!'}</h4>
 						<p>{rawData}</p>
 						<p>{nextOne == 'DONE' ? ' ' : 'NEXT: '+nextOne}</p>
 					</div>
