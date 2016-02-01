@@ -26,14 +26,11 @@ class Detail extends React.Component {
 
 	render() {
 
-		let routeListing = this.state.routes.map((route, index) => {
+		const routeListing = this.state.routes.map((route, index) => {
 			const destination = route.destination;
-			// const destinationImg = baseURL + route.destination_image;
 			const rawData = route.raw_data;
 			const nextOne = route.next.next_next_one;
 			let timeRemaining = route.next.in_secs;
-
-			// startTimer(timeRemaining);
 
 			return (
 				<div className="route" key={index}>
