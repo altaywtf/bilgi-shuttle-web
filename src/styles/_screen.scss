@@ -1,0 +1,48 @@
+@media (max-width: 767px) {
+	header {
+		h1 {
+			padding: 10px 0;
+			font-size: 2rem;
+		}
+	}
+
+	#content {
+		.nodes {
+			.node {
+				.node-details {
+					min-height: 100px;
+					p { font-size: 1.6rem; }
+					img {
+						margin: 20px auto 0px auto;
+						height: 45px;
+					}
+				}
+			}
+		}
+
+		.location-name {
+			h2 { font-size: 1.6rem; }
+			button {
+				margin-top: 17px;
+				font-size: 10px;
+			}
+		}
+		
+		.routes {
+			.route {
+				margin: 15px 0;
+				.route-details {
+					min-height: 150px;
+					h3, h4 { margin: 5px auto; }
+					h3 { font-size: 1.8rem; padding-top: 10px;}
+					h4 { font-size: 1.6rem; }
+					p {
+						padding: 5px 20px;
+						font-size: .8rem;
+					}
+					.route-next { font-size: 1rem; }
+				}
+			}
+		}
+	}
+}

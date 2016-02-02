@@ -8,7 +8,6 @@ header {
 
 	a {
 		color: white;
-
 		&:hover, &:active, &:focus {
 			color: white;
 			text-decoration: none;
@@ -17,7 +16,7 @@ header {
 	}
 
 	h1 {
-		font-weight: 800;
+		font-weight: 600;
 		font-size: 3rem;
 		margin: 0 auto;
 		padding: 30px 0;
@@ -28,7 +27,7 @@ header {
 	a { text-decoration: none; }
 
 	.nodes {	
-    	@extend .parrent;
+    @extend .parrent;
 
 		.node {
 			@extend .child;
@@ -36,17 +35,14 @@ header {
 			@include make-sm-column(4);
 			@include make-md-column(3);
 
-
-
 			.node-details {
 				@extend .grandchild;
 				min-height: 200px;
+  			transition: all 0.2s ease-in-out;
 
-  				transition: all 0.2s ease-in-out;
-
-  				&:hover{
+  			&:hover {
 					box-shadow: 0 6px 6px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  				}
+  			}
 
 				p {
 					font-size: 2.2rem;
@@ -61,7 +57,6 @@ header {
 			}
 
 		}
-
 	}
 
 	.location-name {
@@ -85,7 +80,7 @@ header {
 
 		h2 {
 			color: white;
-			font-weight: 800;
+			font-weight: 600;
 			font-size: 2rem;
 			margin: 0 auto;
 			padding: 20px 0;
@@ -96,49 +91,38 @@ header {
 		@extend .parrent;
 
 		.route {
-			@extend .child;
+			margin: 5px 0;
 			@include make-xs-column(12);
 			@include make-sm-column(6);
-	    	@include make-md-column(6);
+	    @include make-md-column(6);
 
 	    	.route-details{
-				@extend .grandchild;
+					@extend .grandchild;
 
-				min-height: 265px;
+					min-height: 250px;
 
-				position: relative;
-    			overflow: hidden;
+					h3 {
+						font-weight: 600;
+						font-size: 2.4rem;
+						padding-top: 25px;
+					}
 
-				img {
-					height: 80px;
-					position: absolute;
-				    left: 0;
-				    top: 0;
-				    opacity: 0.1;
-				    margin: auto;
-				}
+					h4 {
+						font-weight: 600;
+						font-size: 2.2rem;
+						color: $bs-red;
+						margin-bottom: 20px;
+					}
 
-				h3 {
-					font-weight: 800;
-					font-size: 2.4rem;
-					margin-bottom: 30px;
-				}
+					p {
+						padding: 5px 40px;
+					}
 
-				h4 {
-					font-weight: 800;
-					font-size: 2.2rem;
-					color: $bs-red;
-					margin-bottom: 20px;
-				}
-
-				p {
-					padding: 5px 40px;
-				}
-
+					.route-next {
+						font-weight: 600;
+					}
 	    	}
-
-	    } 
-
+	  } 
 	}
 
 }

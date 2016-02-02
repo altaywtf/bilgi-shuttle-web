@@ -30,15 +30,15 @@ class Detail extends React.Component {
 			const destination = route.destination;
 			const rawData = route.raw_data;
 			const nextOne = route.next.next_next_one;
-			let timeRemaining = route.next.in_secs;
+			const timeRemaining = route.next.in_secs;
 
 			return (
 				<div className="route" key={index}>
 					<div className="route-details">
 						<h3>{destination}</h3>
-						<h4>{timeRemaining ? (route.next.ring == true ? 'Ring' : <Timer seconds={timeRemaining}/>) : 'Done For Today!'}</h4>
+						<h4>{timeRemaining ? (route.next.ring == true ? 'Ring' : <Timer seconds={timeRemaining} nextOne={nextOne}/>) : 'Done For Today!'}</h4>
 						<p>{rawData}</p>
-						<p>{nextOne == 'DONE' ? ' ' : 'NEXT: '+nextOne}</p>
+						<p className="route-next">{nextOne == 'DONE' ? ' ' : 'NEXT: '+nextOne}</p>
 					</div>
 				</div>
 				)

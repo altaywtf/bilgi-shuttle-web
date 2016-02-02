@@ -6,7 +6,7 @@ var Timer = React.createClass({
   },
   
   tick: function() {
-  	var duration = this.props.seconds;
+    this.setState({timeRemaining: this.state.timeRemaining - 1})
   	var timer = this.state.timeRemaining;
 
     var hours = parseInt(timer / 3600, 10)
@@ -19,11 +19,20 @@ var Timer = React.createClass({
     minutes = minutes < 10 ? '0' + minutes : minutes;
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
-    this.setState({timeRemaining: this.state.timeRemaining - 1})
     this.setState({timeDisplay: hours + minutes + ':' + seconds});
 
-    if (--timer < 0) {
-        timer = duration;
+    if (this.state.timeRemaining == 0) {
+      let c = new Date();
+      let d = new Date();
+
+      let nt1 = this.props.nextOne.split(':')[0];
+      let nt2 = this.props.nextOne.split(':')[1];
+
+      d.setHours(nt1, nt2, 0);
+
+      let newTimeDiff = (d-c) / 1000;
+
+      this.setState({timeRemaining: newTimeDiff});
     }
   },
   

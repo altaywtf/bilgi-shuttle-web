@@ -6,7 +6,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-// Variables
+// Color Variables
 $bs-red: #D32F2F;
 $bs-black: #151515;
 $bs-bg: #F0F0F0;
@@ -14,7 +14,7 @@ $bs-bg: #F0F0F0;
 // Extendable Classes
 .parrent {
 	@include make-row();
-    margin-top: 10px;
+  margin: 10px auto 30px auto;
 }
 
 .child { 
@@ -23,11 +23,9 @@ $bs-bg: #F0F0F0;
 
 .grandchild {
 	text-align: center;
-				
 	background: white;
 
 	border-radius: 1px;
 	border-bottom: 2px solid $bs-red;
-				
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
