@@ -3,7 +3,8 @@ import ajax from 'superagent';
 import BackButton from './utils/BackButton';
 import Timer from './utils/Timer';
 
-const baseURL = 'http://localhost:8000';
+// const baseURL = 'http://localhost:8000';
+const baseURL = 'http://bilgishuttle.herokuapp.com';
 
 class Detail extends React.Component {
 

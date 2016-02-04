@@ -3,7 +3,8 @@ import ajax from 'superagent';
 import { Link } from 'react-router';
 import slugify from './utils/Slugify';
 
-const baseURL = 'http://localhost:8000';
+//const baseURL = 'http://localhost:8000';
+const baseURL = 'http://bilgishuttle.herokuapp.com';
 
 class List extends React.Component {
 	constructor(props) {
