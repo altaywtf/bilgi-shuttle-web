@@ -99,11 +99,11 @@ header {
 	    	.route-details{
 					@extend .grandchild;
 
-					min-height: 250px;
+					min-height: 265px;
 
 					h3 {
 						font-weight: 600;
-						font-size: 2.4rem;
+						font-size: 2.6rem;
 						padding-top: 25px;
 					}
 
@@ -111,15 +111,18 @@ header {
 						font-weight: 600;
 						font-size: 2.2rem;
 						color: $bs-red;
-						margin-bottom: 20px;
+						margin: 15px auto;
 					}
 
 					p {
-						padding: 5px 40px;
+						padding: 5px 45px;
+						color: #525252;
 					}
 
 					.route-next {
 						font-weight: 600;
+						font-size: 1.6rem;
+						color: $bs-black;
 					}
 	    	}
 	  } 

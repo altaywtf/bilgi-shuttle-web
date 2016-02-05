@@ -39,7 +39,7 @@ class Detail extends React.Component {
 						<h3>{destination}</h3>
 						<h4>{timeRemaining ? (route.next.ring == true ? 'Ring' : <Timer seconds={timeRemaining} nextOne={nextOne}/>) : 'Done For Today!'}</h4>
 						<p>{rawData}</p>
-						<p className="route-next">{nextOne == 'DONE' ? ' ' : 'NEXT: '+nextOne}</p>
+						<p className="route-next">{nextOne == 'DONE' ? ' ' : 'Next One: '+nextOne}</p>
 					</div>
 				</div>
 				)
