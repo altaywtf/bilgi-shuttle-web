@@ -26,6 +26,16 @@ header {
 #content {
 	a { text-decoration: none; }
 
+	.loading {
+		@extend .parrent;
+		padding: 50px;
+		text-align: center;
+		img {
+			height: 60px;
+		}
+	}
+
+
 	.nodes {	
     @extend .parrent;
 
@@ -51,7 +61,7 @@ header {
 				}
 
 				img {
-					margin: 40px auto 20px auto;
+					margin: 40px auto 10px auto;
 					height: 80px;
 				}
 			}

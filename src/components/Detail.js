@@ -13,7 +13,7 @@ class Detail extends React.Component {
 		this.state = { routes: [], start_node: {} }
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		ajax.get(`${baseURL}/${this.props.params.node}.json`)
 			.end((error, response) => {
 				if(!error && response) {

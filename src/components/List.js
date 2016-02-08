@@ -9,14 +9,14 @@ const baseURL = 'http://bilgishuttle.herokuapp.com';
 class List extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { nodes: [] }
+		this.state = { nodes: [], loaded: false }
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		ajax.get(baseURL+'/index.json')
 			.end((error, response) => {
 				if(!error && response) {
-					this.setState(response.body);
+					this.setState({nodes: response.body.nodes, loaded: true});
 				} else {
 					console.log('Error fetching data', error);
 				}
@@ -42,9 +42,17 @@ class List extends React.Component {
 
 		return (
 			<div className="container">
+			{this.state.loaded
+				?
 				<div className="nodes">
 					{nodeListing}
 				</div>
+				:
+				<div className="loading">
+					<img src="https://linkmaker.itunes.apple.com/images/loading.gif" />
+				</div>
+			}
+
 			</div>
 		);
 	}

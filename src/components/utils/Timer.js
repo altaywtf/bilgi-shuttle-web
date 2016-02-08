@@ -2,7 +2,10 @@ import React from 'react';
 
 var Timer = React.createClass({
   getInitialState: function() {
-    return {timeRemaining: this.props.seconds, timeDisplay: 'Loading'};
+    return {
+      timeRemaining: this.props.seconds,
+      timeDisplay: 'Loading'
+    };
   },
   
   tick: function() {
@@ -21,7 +24,7 @@ var Timer = React.createClass({
 
     this.setState({timeDisplay: hours + minutes + ':' + seconds});
 
-    if (this.state.timeRemaining == 0) {
+    if (this.state.timeRemaining <= 0) {
       let c = new Date();
       let d = new Date();
 
@@ -33,6 +36,8 @@ var Timer = React.createClass({
       let newTimeDiff = (d-c) / 1000;
 
       this.setState({timeRemaining: newTimeDiff});
+    } else if (this.state.timeRemaining > 3600 && this.state.timeRemaining < 7200) { // THIS IS NOT A GOOD WAY!
+      this.setState({timeDisplay: 'Ring'});
     }
   },
   
