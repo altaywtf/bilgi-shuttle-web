@@ -71,8 +71,8 @@ $ yo react-webpack:component my/namespaced/components/name
 ```
 
 ##Screenshots
-<img src="src/images/bs_web_01.png" width="48%">
-<img src="src/images/bs_web_02.png" width="48%">
+<img src="src/images/bs_web_1.png" width="48%">
+<img src="src/images/bs_web_2.png" width="48%">
 
 
 ##License
