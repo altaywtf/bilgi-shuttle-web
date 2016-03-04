@@ -3,11 +3,9 @@ import ajax from 'superagent';
 import BackButton from './utils/BackButton';
 import Timer from './utils/Timer';
 
-// const baseURL = 'http://localhost:8000';
-const baseURL = 'http://bilgishuttle.herokuapp.com';
+const baseURL = 'http://api.bilgishuttle.com';
 
-class Detail extends React.Component {
-
+export default class Detail extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { routes: [], start_node: {} }
@@ -26,7 +24,6 @@ class Detail extends React.Component {
 	}
 
 	render() {
-
 		const routeListing = this.state.routes.map((route, index) => {
 			const destination = route.destination;
 			const rawData = route.raw_data;
@@ -67,5 +64,3 @@ class Detail extends React.Component {
 		);
 	}
 }
-
-export default Detail;

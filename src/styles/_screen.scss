@@ -1,3 +1,37 @@
+@media (min-width: 1920px) {
+	header {
+		h1 {
+			padding: 40px 0;
+		}
+	}
+
+	#content {
+		min-height: 80vh;
+
+		.nodes {
+			padding: 25px 0;
+		}
+	}
+
+	footer {
+		height: 40px;
+	}
+}
+
+@media (min-width: 1440px) {
+
+	#content {
+		min-height: 85vh;
+
+	  .nodes {
+			.node {
+				@include make-lg-column(4);
+			}
+		}
+	}
+
+}
+
 @media (max-width: 767px) {
 	header {
 		h1 {
@@ -7,6 +41,8 @@
 	}
 
 	#content {
+		min-height: 90vh;
+
 		.nodes {
 			.node {
 				.node-details {
@@ -27,7 +63,7 @@
 				font-size: 10px;
 			}
 		}
-		
+
 		.routes {
 			.route {
 				margin: 15px 0;
