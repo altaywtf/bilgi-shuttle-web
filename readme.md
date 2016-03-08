@@ -2,9 +2,9 @@
 
 Basic but useful web application for listing the shuttle routes and times of İstanbul Bilgi University, built with [React](https://facebook.github.io/react/).
 
-The data comes from [bilgi-shuttle-api](https://github.com/mdegis/bilgi-shuttle/), processed and shown in this application.
+Data comes from [bilgi-shuttle-api](https://github.com/mdegis/bilgi-shuttle/), processed and shown in this application.
 
-There is also an iOS version of this app: [bilgi-shuttle-ios](https://github.com/zebrasinpyjamas/bilgi-shuttle-ios)
+iOS version: [bilgi-shuttle-ios](https://github.com/bilgishuttle/bilgi-shuttle-ios)
 
 ##Installation
 ```bash
@@ -12,10 +12,10 @@ There is also an iOS version of this app: [bilgi-shuttle-ios](https://github.com
 https://nodejs.org/
 
 # Clone the repository
-$ git clone https://github.com/zebrasinpyjamas/bilgi-shuttle-webapp.git
+$ git clone https://github.com/bilgishuttle/bilgi-shuttle-web.git
 
 # Go to app folder
-$ cd bilgi-shuttle-webapp
+$ cd bilgi-shuttle-web
 
 # Run npm install
 $ npm install
@@ -23,13 +23,11 @@ $ npm install
 
 ##Usage
 ```bash
-# Note that bilgi-shuttle-api should be running at the same time with this app to get shuttle data.
-
 # Start for development
 $ npm start # or
 $ npm run serve
 
-# Application will be served on 
+# Application will be served on
 http://localhost:8080
 
 # Using React-Hot-Loader (Similar to LiveReload)
