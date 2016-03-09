@@ -2,7 +2,7 @@
 
 Basic but useful web application for listing the shuttle routes and times of İstanbul Bilgi University, built with [React](https://facebook.github.io/react/).
 
-Data comes from [bilgi-shuttle-api](https://github.com/mdegis/bilgi-shuttle/), processed and shown in this application.
+Data comes from [bilgi-shuttle-api](https://github.com/bilgishuttle/bilgi-shuttle-api/), processed and shown in this application.
 
 iOS version: [bilgi-shuttle-ios](https://github.com/bilgishuttle/bilgi-shuttle-ios)
 
@@ -69,8 +69,9 @@ $ yo react-webpack:component my/namespaced/components/name
 ```
 
 ##Screenshots
-<img src="src/images/bs_web_1.png" width="48%">
-<img src="src/images/bs_web_2.png" width="48%">
+<img src="src/images/bs_web_01.png" width="100%">
+<img src="src/images/bs_web_02.png" width="49%">
+<img src="src/images/bs_web_03.png" width="49%">
 
 
 ##License
