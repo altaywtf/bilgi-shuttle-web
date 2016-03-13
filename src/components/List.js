@@ -3,10 +3,9 @@ import ajax from 'superagent';
 import { Link } from 'react-router';
 import slugify from './utils/Slugify';
 
-//const baseURL = 'http://localhost:8000';
-const baseURL = 'http://bilgishuttle.herokuapp.com';
+const baseURL = 'http://api.bilgishuttle.com';
 
-class List extends React.Component {
+export default class List extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { nodes: [], loaded: false }
@@ -57,5 +56,3 @@ class List extends React.Component {
 		);
 	}
 }
-
-export default List;
