@@ -4,7 +4,8 @@ Basic but useful web application for listing the shuttle routes and times of İs
 
 Data comes from [bilgi-shuttle-api](https://github.com/bilgishuttle/bilgi-shuttle-api/), processed and shown in this application.
 
-iOS version: [bilgi-shuttle-ios](https://github.com/bilgishuttle/bilgi-shuttle-ios)
+- iOS version: [bilgi-shuttle-ios](https://github.com/bilgishuttle/bilgi-shuttle-ios)
+- Android version: [bilgi-shuttle-android](https://github.com/bilgishuttle/bilgi-shuttle-android)
 
 ##Installation
 ```bash
