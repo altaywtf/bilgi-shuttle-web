@@ -29,7 +29,7 @@ export default class About extends React.Component {
 
                   <p>You are currently viewing the <a href="https://github.com/bilgishuttle/bilgi-shuttle-web">web</a> application.</p>
 
-                  <p>We also have <a href="https://github.com/bilgishuttle/bilgi-shuttle-ios">iOS</a> and <a href="https://github.com/bilgishuttle/bilgi-shuttle-android">Android</a> versions, but they haven't published yet.</p>
+                  <p>We also have <a href="https://github.com/bilgishuttle/bilgi-shuttle-ios">iOS</a> and <a href="https://github.com/bilgishuttle/bilgi-shuttle-android">Android</a> versions, but they aren't published yet.</p>
 
                   <p>However, you can check all the applications written for this project on <a href="https://github.com/bilgishuttle">Github</a>.</p>
 
