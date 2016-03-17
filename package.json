@@ -1,9 +1,8 @@
 {
-  "name": "bilgiShuttleWebapp",
-  "private": true,
-  "version": "0.0.1",
-  "description": "Web Application of Bilgi Shuttle",
-  "main": "",
+  "name": "BilgiShuttleWeb",
+  "version": "0.1.0",
+  "description": "Basic but useful web application for listing the shuttle routes and times of İstanbul Bilgi University, built with React.",
+  "main": "index.js",
   "scripts": {
     "clean": "rimraf dist/*",
     "copy": "copyfiles -f ./src/index.html ./src/favicon.ico ./dist",
@@ -19,7 +18,7 @@
     "test": "karma start",
     "test:watch": "karma start --autoWatch=true --singleRun=false"
   },
-  "repository": "",
+  "repository": "https://github.com/bilgishuttle/bilgi-shuttle-web",
   "keywords": [],
   "author": "zebrasinpyjamas",
   "devDependencies": {
@@ -72,6 +71,7 @@
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-router": "^1.0.3",
+    "react-title-component": "^1.0.1",
     "superagent": "^1.7.1"
   }
 }

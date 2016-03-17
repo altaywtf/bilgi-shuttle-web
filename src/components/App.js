@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Header from './Header';
-import Footer from './Footer';
+import Header from './partials/Header';
+import Footer from './partials/Footer';
 
-import 'styles/App.scss';
+import '../styles/App.scss';
 
 export default class App extends React.Component {
   render() {

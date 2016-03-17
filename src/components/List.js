@@ -1,5 +1,6 @@
 import React from 'react';
 import ajax from 'superagent';
+import Title from 'react-title-component'
 import { Link } from 'react-router';
 import slugify from './utils/Slugify';
 
@@ -8,7 +9,10 @@ const baseURL = 'http://api.bilgishuttle.com';
 export default class List extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { nodes: [], loaded: false }
+		this.state = {
+			nodes: [],
+			loaded: false
+		};
 	}
 
 	componentDidMount() {
@@ -36,11 +40,12 @@ export default class List extends React.Component {
 						</div>
 					</Link>
 				</div>
-				)
+			);
 			});
 
 		return (
 			<div className="container">
+			<Title render="BilgiShuttle"/>
 			{this.state.loaded
 				?
 				<div className="nodes">
@@ -51,7 +56,6 @@ export default class List extends React.Component {
 					<img src="https://linkmaker.itunes.apple.com/images/loading.gif" />
 				</div>
 			}
-
 			</div>
 		);
 	}

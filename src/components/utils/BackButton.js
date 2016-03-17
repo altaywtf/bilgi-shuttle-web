@@ -7,7 +7,7 @@ var BackButton = React.createClass({
   mixins: [ History ],
   render: function() {
     return (
-      <button onClick={this.history.goBack}>Back</button>
+      <button className="backButton" onClick={this.history.goBack}>Back</button>
     );
   }
 });
