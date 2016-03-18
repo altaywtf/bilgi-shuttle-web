@@ -11,13 +11,21 @@ $bs-red: #D32F2F;
 $bs-black: #151515;
 $bs-bg: #F0F0F0;
 
+// Helpers
+.col-centered {
+  display: inline-block;
+  float: none!important;
+  margin-right:-4px;
+}
+
 // Extendable Classes
 .parrent {
 	@include make-row();
   margin: 10px auto 30px auto;
+  text-align:center;
 }
 
-.child { 
+.child {
 	margin: 15px 0;
 }
 
