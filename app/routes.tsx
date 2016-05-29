@@ -8,7 +8,7 @@ function getRoutes (store) {
 	return (
 		<Route path="/" component={ App }>
 			<IndexRoute component={ Home } />
-      <Route path="detail/:node" component={ Detail } />
+      <Route path="location/:node" component={ Detail } />
       <Route path="about" component={ About } />
 	  </Route>
 	)

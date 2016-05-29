@@ -4,6 +4,9 @@ import { getRoutes } from '../../redux/modules/routes/r';
 import { Routes as IRoutes } from '../../redux/modules/routes/r.model';
 import { slugify } from '../../helpers/Slugify';
 
+import { Grid } from 'react-bootstrap';
+import { RouteList } from '../../components';
+
 interface IProps {
   routes: IRoutes;
   getRoutes: Redux.ActionCreator;
@@ -46,11 +49,14 @@ export class Detail extends React.Component<IProps, any> {
   render() {
     const { routes } = this.props;
 
-    if (routes.data.length > 0) {
-      console.log(this.getCurrentRoutes());
-    }
-
-    return (<div>Detail</div>);
+    return (
+      <Grid>
+        <RouteList 
+          data={this.getCurrentRoutes()} 
+          isFetching={routes.isFetching} 
+        />
+      </Grid>
+    );
   }
 }
 

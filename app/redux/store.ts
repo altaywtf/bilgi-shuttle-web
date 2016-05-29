@@ -14,10 +14,14 @@ const router = routerMiddleware(browserHistory);
  * Creates a Redux Store from a given initialState
  */
 export function configureStore(initialState?: Object): Redux.Store {
+	const env: string = process.env.NODE_ENV;
 
-	const logger = createLogger();
+  let middlewares: any[] = [router, thunk];
 
-  let middlewares: any[] = [router, thunk, logger];
+  if (env === 'development') {
+		const logger = createLogger();
+		middlewares.push(logger);
+  }
 
 	const finalCreateStore = compose(
 		applyMiddleware(...middlewares)
@@ -27,13 +31,13 @@ export function configureStore(initialState?: Object): Redux.Store {
 	const store: Redux.Store = finalCreateStore(rootReducer, initialState);
 
   /** Adds Hot Reloading Capability to Reducers in Dev. Mode */
-	/*
-	if (appConfig.env === 'development' && (module as any).hot) {
+	
+	if (env === 'development' && (module as any).hot) {
 		(module as any).hot.accept('./reducers', () => {
 			store.replaceReducer((require('./reducers')));
 		});
 	}
-	*/
+	
 
 	return store;
 };

@@ -9,7 +9,13 @@
     "build": "NODE_ENV=production webpack --config ./config/webpack/prod.js",
     "test": "karma start ./config/test/karma.js"
   },
-  "keywords": ["react", "redux", "typescript", "istanbul", "bilgi university"],
+  "keywords": [
+    "react",
+    "redux",
+    "typescript",
+    "istanbul",
+    "bilgi university"
+  ],
   "author": "Altay Aydemir <altay.aydemir@gmail.com>",
   "license": "ISC",
   "devDependencies": {
@@ -53,6 +59,7 @@
   "dependencies": {
     "es6-promise": "^3.2.1",
     "react": "^15.0.1",
+    "react-bootstrap": "^0.29.4",
     "react-dom": "^15.0.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.0",
