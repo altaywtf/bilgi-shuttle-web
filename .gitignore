@@ -1,6 +1,13 @@
 # OS X - DS_Store
 .DS_Store
 
+# Typings Lib
+typings
+
+# Bundles
+public/*
+!public/index.html
+
 # Logs
 logs
 *.log
