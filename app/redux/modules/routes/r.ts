@@ -1,6 +1,4 @@
 import * as I from './r.model';
-import 'whatwg-fetch';
-
 const API_URL: string = 'http://api.bilgishuttle.com';
 
 /** Initial State */

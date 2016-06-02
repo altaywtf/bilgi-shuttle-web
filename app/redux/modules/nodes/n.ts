@@ -1,17 +1,14 @@
 import * as I from './n.model';
-import 'whatwg-fetch';
-
 const API_URL: string = 'http://api.bilgishuttle.com';
 
 /** Initial State */
-const INITIAL_STATE: I.Nodes = {
+export const initialState: I.Nodes = {
   isFetching: false,
-  data: [],
-  error: ''
+  data: []
 }
 
 /** Reducer */
-export function nodesReducer(state = INITIAL_STATE, action: I.NodeAction) {
+export function nodesReducer(state = initialState, action: I.NodeAction = {}) {
   switch (action.type) {
     case GET_NODES_REQUEST:
       return Object.assign({}, state, {

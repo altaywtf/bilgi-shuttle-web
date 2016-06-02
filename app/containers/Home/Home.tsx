@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import { getNodes } from '../../redux/modules/nodes/n';
 import { Nodes as INodes} from '../../redux/modules/nodes/n.model';
+const { connect } = require('react-redux');
 
 import { Grid } from 'react-bootstrap';
 import { NodeList } from '../../components';
@@ -11,22 +11,16 @@ interface IProps {
   getNodes: Redux.ActionCreator;
 }
 
-function mapstateToProps(state) {
-  return {
-    nodes: state.nodes
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
+@connect(
+  state => ({nodes: state.nodes}),
+  dispatch => ({
     getNodes: () => dispatch(getNodes())
-  };
-}
-
-export class Home extends React.Component<IProps, any> {
+  })
+)
+class Home extends React.Component<IProps, any> {
   componentWillMount() {
     const { nodes, getNodes } = this.props;
-    if (nodes.data.length === 0) {
+    if (nodes.data.length == 0) {
       this.props.getNodes();
     }
   }
@@ -36,10 +30,10 @@ export class Home extends React.Component<IProps, any> {
 
     return (
       <Grid>
-        <NodeList data={nodes.data} isFetching={nodes.isFetching} /> 
+        <NodeList data={nodes.data} isFetching={nodes.isFetching} />
       </Grid>
     );
   }
 }
 
-export default connect(mapstateToProps, mapDispatchToProps)(Home);
+export { Home }

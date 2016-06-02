@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import { getRoutes } from '../../redux/modules/routes/r';
 import { Routes as IRoutes } from '../../redux/modules/routes/r.model';
 import { slugify } from '../../helpers/Slugify';
+const { connect } = require('react-redux');
 
 import { Grid } from 'react-bootstrap';
 import { RouteList } from '../../components';
@@ -15,19 +15,13 @@ interface IProps {
   };
 }
 
-function mapStateToProps(state) {
-  return {
-    routes: state.routes
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
+@connect(
+  state => ({ routes: state.routes }),
+  dispatch => ({
     getRoutes: (node: string) => dispatch(getRoutes(node))
-  };
-}
-
-export class Detail extends React.Component<IProps, any> {
+  })
+)
+class Detail extends React.Component<IProps, any> {
   constructor(props) {
     super(props);
     this.getCurrentRoutes = this.getCurrentRoutes.bind(this);
@@ -51,13 +45,13 @@ export class Detail extends React.Component<IProps, any> {
 
     return (
       <Grid>
-        <RouteList 
-          data={this.getCurrentRoutes()} 
-          isFetching={routes.isFetching} 
+        <RouteList
+          data={this.getCurrentRoutes()}
+          isFetching={routes.isFetching}
         />
       </Grid>
     );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+export { Detail }

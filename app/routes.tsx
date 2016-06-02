@@ -4,7 +4,7 @@ import * as React from 'react';
 import { IndexRoute, Route } from 'react-router';
 import { App, Home, Detail, About } from './containers';
 
-function getRoutes (store) {
+function getRoutes(store) {
 	return (
 		<Route path="/" component={ App }>
 			<IndexRoute component={ Home } />
@@ -14,4 +14,4 @@ function getRoutes (store) {
 	)
 };
 
-export default getRoutes;
+export { getRoutes };

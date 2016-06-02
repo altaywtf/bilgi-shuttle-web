@@ -1,6 +1,4 @@
-import App from './App/App';
-import Home from './Home/Home';
-import Detail from './Detail/Detail';
-import About from './About/About';
-
-export { App, Home, Detail, About };
+export { App } from './App/App';
+export { Home } from './Home/Home';
+export { Detail } from './Detail/Detail';
+export { About } from './About/About';

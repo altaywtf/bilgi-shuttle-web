@@ -13,4 +13,4 @@ const rootReducer: Redux.Reducer = combineReducers({
   routes: routesReducer
 });
 
-export default rootReducer;
+export { rootReducer }

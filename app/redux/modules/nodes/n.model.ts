@@ -1,11 +1,11 @@
 export interface Nodes {
   isFetching: boolean;
-  data: NodeDetail[];
-  error: any;
+  data?: NodeDetail[];
+  error?: any;
 }
 
 export interface NodeAction {
-  type: string;
+  type?: string;
   data?: NodeDetail[];
   error?: any;
 }
