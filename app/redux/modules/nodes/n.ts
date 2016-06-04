@@ -3,9 +3,9 @@ const API_URL: string = 'http://api.bilgishuttle.com';
 
 /** Initial State */
 export const initialState: I.Nodes = {
-  isFetching: false,
+  isFetching: true,
   data: []
-}
+};
 
 /** Reducer */
 export function nodesReducer(state = initialState, action: I.NodeAction = {}) {
@@ -36,7 +36,7 @@ export function nodesReducer(state = initialState, action: I.NodeAction = {}) {
 export function getNodes(): Redux.Dispatch {
   return dispatch => {
     dispatch(getNodesRequest());
-    fetch(`${API_URL}/index.json`).then(res => {
+    return fetch(`${API_URL}/index.json`).then(res => {
         if (res.ok) {
           return res.json().then(res => dispatch(getNodesSuccess(res.nodes)));
         } else {
@@ -50,7 +50,7 @@ export function getNodes(): Redux.Dispatch {
 /** Request */
 export const GET_NODES_REQUEST: string = 'GET_NODES_REQUEST';
 
-export function getNodesRequest() : I.NodeAction {
+export function getNodesRequest(): I.NodeAction {
   return {
     type: GET_NODES_REQUEST
   };

@@ -3,7 +3,7 @@ const API_URL: string = 'http://api.bilgishuttle.com';
 
 /** Initial State */
 const INITIAL_STATE: I.Routes = {
-  isFetching: false,
+  isFetching: true,
   data: [],
   error: ''
 };
@@ -37,7 +37,7 @@ export function routesReducer(state = INITIAL_STATE, action: I.RouteAction) {
 export function getRoutes(node: string): Redux.Dispatch {
   return dispatch => {
     dispatch(getRoutesRequest());
-    fetch(`${API_URL}/${node}.json`).then(res => {
+    return fetch(`${API_URL}/${node}.json`).then(res => {
       if (res.ok) {
         return res.json().then(res => dispatch(getRoutesSuccess(res)));
       } else {

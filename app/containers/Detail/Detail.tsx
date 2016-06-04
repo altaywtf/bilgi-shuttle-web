@@ -29,7 +29,9 @@ class Detail extends React.Component<IProps, any> {
 
   componentWillMount() {
     const { params, routes, getRoutes } = this.props;
-    const isFetchedBefore: boolean = routes.data.some(d => slugify(d.start_node.name) == params.node);
+    const isFetchedBefore: boolean = routes.data.some(d =>
+      slugify(d.start_node.name) === params.node
+    );
     if (!isFetchedBefore) {
       getRoutes(params.node);
     }
@@ -37,7 +39,9 @@ class Detail extends React.Component<IProps, any> {
 
   getCurrentRoutes() {
     const { routes, params } = this.props;
-    return routes.data.filter(d => slugify(d.start_node.name) == params.node)[0];
+    return routes.data.filter(d =>
+      slugify(d.start_node.name) === params.node
+    )[0];
   }
 
   render() {

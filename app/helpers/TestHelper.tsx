@@ -15,7 +15,13 @@ const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 const createStore = configureStore();
 
-/** Render Component */
+function createMockStore(data) {
+  const middlewares = [thunk];
+  const mockStore = configureStore(middlewares);
+  return mockStore(data);
+}
+
+/** Render Component Helper */
 function renderComponent(ComponentClass, state?, props?) {
 
   const store: Redux.Store = createStore(rootReducer, state);
@@ -29,4 +35,4 @@ function renderComponent(ComponentClass, state?, props?) {
   return component;
 }
 
-export { API_URL, mockStore, renderComponent };
+export { API_URL, createMockStore, renderComponent }

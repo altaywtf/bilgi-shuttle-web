@@ -1,15 +1,36 @@
 #Bilgi Shuttle Web Application
 
-Basic but useful web application for listing the shuttle routes and times of İstanbul Bilgi University, built with [React](https://facebook.github.io/react/).
+[![Dependency Status](https://david-dm.org/bilgishuttle/bilgi-shuttle-web.svg)]()
+[![devDependency Status](https://david-dm.org/bilgishuttle/bilgi-shuttle-web/dev-status.svg)]()
+
+Basic but useful cross-platform application for listing the shuttle routes and times of İstanbul Bilgi University.
 
 Data comes from [bilgi-shuttle-api](https://github.com/bilgishuttle/bilgi-shuttle-api/), processed and shown in this application.
 
 - iOS version: [bilgi-shuttle-ios](https://github.com/bilgishuttle/bilgi-shuttle-ios)
 - Android version: [bilgi-shuttle-android](https://github.com/bilgishuttle/bilgi-shuttle-android)
 
+##About
+Bilgi Shuttle Web uses
+
+- TypeScript flavored [React](https://facebook.github.io/react/) with [React-Router].
+
+- [Redux](https://github.com/reactjs/redux) as the data layer, with the assistance of libraries like react-router-redux, redux-thunk and redux-logger.
+
+- Polyfill of the native Fetch API, [whatwg-fetch](https://github.com/github/fetch) for async data loading.
+
+- React Bootstrap for styling.
+
+- Karma, Mocha and Chai as the core of testing libraries.
+
+- Enzyme for testing React Components.
+
+- fetch-mock and redux-mock-store for testing Redux Modules.
+
+
 ##Installation
 ```bash
-# Install node & npm (or update if you have an older version)
+# Install node (or update if you have an older version, I use v6.2.0 atm)
 https://nodejs.org/
 
 # Clone the repository
@@ -18,55 +39,22 @@ $ git clone https://github.com/bilgishuttle/bilgi-shuttle-web.git
 # Go to app folder
 $ cd bilgi-shuttle-web
 
-# Run npm install
-$ npm install
+# Install node_modules and type definitions
+$ npm run setup
 ```
 
 ##Usage
 ```bash
 # Start for development
-$ npm start # or
-$ npm run serve
+$ npm start
 
-# Application will be served on
-http://localhost:8080
-
-# Using React-Hot-Loader (Similar to LiveReload)
-http://localhost:8080/webpack-dev-server
-
-# Show all locations
-http://localhost:8080/#/
-
-# Show specific location (santral, dolapdere, kustepe, kabatas, mecidiyekoy, halicioglu, pangalti)
-http://localhost:8080/#/location:<name>
-
-# Start the dev-server with the dist version
-$ npm run serve:dist
-
-# Just build the dist version and copy static files
-$ npm run dist
+# Application will be served on http://localhost:3000
 
 # Run unit tests
 $ npm test
 
-# Lint all files in src (also automatically done AFTER tests are run)
-$ npm run lint
-
-# Clean up the dist directory
-$ npm run clean
-
-# Just copy the static assets
-$ npm run copy
-```
-
-```bash
-# Installing libraries with Bower (bower_components --> src/vendor)
-$ npm install -g bower
-$ bower install <package_name>
-
-# Generating React Components with Yeoman (not quite necessary)
-$ npm install -g yo
-$ yo react-webpack:component my/namespaced/components/name
+# Build the dist version and copy static files
+$ npm run build
 ```
 
 ##Screenshots

@@ -1,7 +1,3 @@
-/**
- * Type declerations for global development variables
- */
-
 interface Window {
   __INITIAL_STATE__?: any;
 }

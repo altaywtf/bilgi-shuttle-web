@@ -1,7 +1,3 @@
-/**
- * Configuration file of Redux Reducers
- */
-
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import { nodesReducer } from './modules/nodes/n';

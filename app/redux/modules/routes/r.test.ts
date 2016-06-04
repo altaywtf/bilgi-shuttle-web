@@ -1,4 +1,4 @@
-import { API_URL, mockStore } from '../../../helpers/TestHelper';
+import { API_URL, createMockStore } from '../../../helpers/TestHelper';
 import { expect } from 'chai';
 
 import * as n from './r';

@@ -1,7 +1,3 @@
-/**
- * Configuration file of Redux Store
- */
-
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import { browserHistory } from 'react-router';

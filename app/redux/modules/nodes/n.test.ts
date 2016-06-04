@@ -1,29 +1,27 @@
-import { API_URL, mockStore } from '../../../helpers/TestHelper';
+import { API_URL, createMockStore } from '../../../helpers/TestHelper';
 import { expect } from 'chai';
+const fetchMock = require('fetch-mock');
 
 import * as n from './n';
 import * as I from './n.model';
 
-const fetchMock = require('fetch-mock');
-
 /** Fake Data */
 const data: I.NodeDetail[] = [
   {
-    image: "/media/nodes/kabatas_JtKuUYU.png",
+    image: '/media/nodes/kabatas_JtKuUYU.png',
     id: 8,
-    name: "Kabataş"
+    name: 'Kabataş'
   },
   {
-    image: "/media/nodes/santral_AD5d4PA.png",
+    image: '/media/nodes/santral_AD5d4PA.png',
     id: 9,
-    name: "Santral"
+    name: 'Santral'
   }
 ];
 
 const error: Object = {
   message: 'Error'
 };
-
 
 /** Nodes Module: Reducer Tests */
 describe('Nodes Module: Reducer', () => {
@@ -62,6 +60,58 @@ describe('Nodes Module: Reducer', () => {
 
 /** Nodes Module: Action Creators */
 describe('Nodes Module: Action Creators', () => {
+
+  describe('Get Nodes (Async)', () => {
+
+    afterEach(() => {
+      fetchMock.restore();
+    })
+
+    it('dispatches getNodesSuccess on OK reqs', (done) => {
+      fetchMock.mock(`${API_URL}/index.json`, {
+        status: 200,
+        body: {
+          nodes: data
+        }
+      });
+
+      const action: I.NodeAction = n.getNodes();
+      const store = createMockStore(n.initialState);
+
+      const expectedActions: I.NodeAction[] = [
+        { type: n.GET_NODES_REQUEST },
+        { type: n.GET_NODES_SUCCESS, data }
+      ];
+
+      store.dispatch(action)
+        .then(() => expect(store.getActions()).to.eql(expectedActions))
+        .then(() => done())
+        .catch(err => done(err));
+    });
+
+    it('dispatches getNodesFailure on failed reqs', (done) => {
+      fetchMock.mock(`${API_URL}/index.json`, {
+        status: 400,
+        body: {
+          error
+        }
+      });
+
+      const action: I.NodeAction = n.getNodes();
+      const store = createMockStore(n.initialState);
+
+      const expectedActions: I.NodeAction[] = [
+        { type: n.GET_NODES_REQUEST },
+        { type: n.GET_NODES_FAILURE, error: {error} }
+      ];
+
+      store.dispatch(action)
+        .then(() => expect(store.getActions()).to.eql(expectedActions))
+        .then(() => done())
+        .catch(err => done(err));
+    });
+
+  });
 
   describe('Get Nodes Request', () => {
     it('has the correct type', () => {
