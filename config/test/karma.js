@@ -1,31 +1,51 @@
 var webpack = require('webpack');
 
 module.exports = function (config) {
-  config.set({
+  var conf = {
     basePath: '',
-    
-    frameworks: ['mocha', 'chai', 'sinon', 'es6-shim'],
-    
+
+    frameworks: ['mocha', 'chai', 'es6-shim'],
+
+    browsers: [],
+
     files: ['../webpack/test.js'],
 
     plugins: ["karma-*"],
-    
+
     preprocessors: {
+      '../../app/*.ts': ['coverage'],
+      '../../app/*.tsx': ['coverage'],
       '../webpack/test.js': ['webpack', 'sourcemap']
     },
-    
+
+    reporters: [ 'mocha', 'coverage' ],
+
+    coverageReporter: {
+      dir: '../../coverage',
+      reporters: []
+    },
+
     webpack: {
       devtool: 'inline-source-map',
       module: {
         loaders: [
           {
-            test: /\.(ts|tsx)$/,
+            test: /\.tsx?$/,
             exclude: /node_modules/,
             loader: 'ts-loader'
           },
           {
             test: /\.json$/,
             loader: 'json'
+          }
+        ],
+        postLoaders: [
+          {
+            test: /\.tsx?$/,
+            loader: 'istanbul-instrumenter-loader',
+            exclude: [
+              /node_modules/
+            ]
           }
         ]
       },
@@ -50,13 +70,24 @@ module.exports = function (config) {
       noInfo: true
     },
 
-    reporters: ['mocha'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
     singleRun: false,
     concurrency: Infinity
-  })
+  };
+
+  if (process.env.NODE_ENV === 'ci') {
+    conf.autoWatch = false;
+    conf.singleRun = true;
+    conf.browsers.push('Firefox');
+    conf.coverageReporter.reporters.push( { type : 'lcov', subdir : '.' } );
+  } else {
+    conf.browsers.push('Chrome');
+    conf.coverageReporter.reporters.push( { type : 'html', subdir : 'html' } );
+    conf.coverageReporter.reporters.push( { type : 'lcov', subdir : '.' } );
+  }
+
+  config.set(conf);
 }

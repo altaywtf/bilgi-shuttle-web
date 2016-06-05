@@ -1,7 +1,10 @@
 #Bilgi Shuttle Web Application
 
+[![Build Status](https://travis-ci.org/bilgishuttle/bilgi-shuttle-web.svg?branch=develop)](https://travis-ci.org/bilgishuttle/bilgi-shuttle-web)
+[![Coverage Status](https://coveralls.io/repos/github/bilgishuttle/bilgi-shuttle-web/badge.svg?branch=develop)](https://coveralls.io/github/bilgishuttle/bilgi-shuttle-web?branch=develop)
 [![Dependency Status](https://david-dm.org/bilgishuttle/bilgi-shuttle-web.svg)]()
 [![devDependency Status](https://david-dm.org/bilgishuttle/bilgi-shuttle-web/dev-status.svg)]()
+[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000)](https://github.com/bilgishuttle/bilgi-shuttle-web)
 
 Basic but useful cross-platform application for listing the shuttle routes and times of İstanbul Bilgi University.
 
