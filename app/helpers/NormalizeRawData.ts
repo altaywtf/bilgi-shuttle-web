@@ -1,5 +1,5 @@
-function normalizeRawData(rawData: string) {
-  let rawArr = rawData.split(" - ");
+function normalizeRawData(rawData: string): string[] {
+  let rawArr: string[] = rawData.split(" - ");
   let newArr = [];
   let rawNew = [];
 

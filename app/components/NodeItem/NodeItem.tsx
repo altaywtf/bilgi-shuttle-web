@@ -3,6 +3,7 @@ import { slugify } from '../../helpers/Slugify';
 import { NodeDetail as INodeDetail } from '../../redux/modules/nodes/n.model';
 import { Col, Panel } from 'react-bootstrap';
 const API_URL: string = 'http://api.bilgishuttle.com';
+
 const s = require('./NodeItem.css');
 
 interface IProps {

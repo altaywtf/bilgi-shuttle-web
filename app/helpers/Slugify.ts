@@ -1,5 +1,12 @@
-export function slugify (text) {
-  let trMap = { "çÇ": "c", "ğĞ": "g", "şŞ": "s", "üÜ": "u", "ıİ": "i", "öÖ": "o" };
+function slugify (text: string): string {
+  let trMap: Object = {
+    "çÇ": "c",
+    "ğĞ": "g",
+    "şŞ": "s",
+    "üÜ": "u",
+    "ıİ": "i",
+    "öÖ": "o"
+  };
 
   for (let key in trMap) {
     text = text.replace(new RegExp("[" + key + "]", "g"), trMap[key]);
@@ -10,3 +17,5 @@ export function slugify (text) {
     .replace(/[-]+/gi, "-")
     .toLowerCase();
 }
+
+export { slugify }

@@ -3,7 +3,7 @@ const API_URL: string = 'http://api.bilgishuttle.com';
 
 /** React Specific */
 import * as React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { rootReducer } from '../redux/reducers';
 

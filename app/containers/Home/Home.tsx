@@ -21,7 +21,7 @@ class Home extends React.Component<IProps, any> {
   componentWillMount() {
     const { nodes, getNodes } = this.props;
     if (nodes.data.length == 0) {
-      this.props.getNodes();
+      getNodes();
     }
   }
 

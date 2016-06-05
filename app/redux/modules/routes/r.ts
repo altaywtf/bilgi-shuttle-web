@@ -2,14 +2,14 @@ import * as I from './r.model';
 const API_URL: string = 'http://api.bilgishuttle.com';
 
 /** Initial State */
-const INITIAL_STATE: I.Routes = {
+export const initialState: I.Routes = {
   isFetching: true,
   data: [],
   error: ''
 };
 
 /** Reducer */
-export function routesReducer(state = INITIAL_STATE, action: I.RouteAction) {
+export function routesReducer(state = initialState, action: I.RouteAction = {}) {
   switch (action.type) {
     case GET_ROUTES_REQUEST:
       return Object.assign({}, state, {
@@ -59,7 +59,7 @@ export function getRoutesRequest(): I.RouteAction {
 /** Success */
 export const GET_ROUTES_SUCCESS: string = 'GET_ROUTES_SUCCESS';
 
-export function getRoutesSuccess(data: any): I.RouteAction {
+export function getRoutesSuccess(data: I.RouteData): I.RouteAction {
   return {
     type: GET_ROUTES_SUCCESS,
     data

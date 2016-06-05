@@ -7,13 +7,14 @@ const s = require('./App.css');
 
 class App extends React.Component<any, void> {
 	render() {
+    const { params, location, children } = this.props;
 		return (
       <section className={s.App}>
         <Header />
-        <PageTitle title={this.props.params.node}
-          path={this.props.location.pathname}/>
+        <PageTitle title={params.node}
+          path={location.pathname}/>
         <section className={s.Content}>
-          {this.props.children}
+          {children}
         </section>
         <Footer />
 			</section>

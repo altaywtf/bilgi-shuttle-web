@@ -1,10 +1,16 @@
 import * as React from 'react';
+import { RouteDetail as IRouteDetail } from '../../redux/modules/routes/r.model';
 import { Col, Panel } from 'react-bootstrap';
 import { normalizeRawData } from '../../helpers/NormalizeRawData';
 import { Timer } from '../';
+
 const s = require('./RouteItem.css');
 
-class RouteItem extends React.Component<any, void> {
+interface IProps {
+  data: IRouteDetail;
+}
+
+class RouteItem extends React.Component<IProps, void> {
   render() {
     const { data } = this.props;
 

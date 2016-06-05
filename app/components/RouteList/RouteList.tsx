@@ -1,10 +1,11 @@
 import * as React from 'react';
+import { RouteData as IRouteData } from '../../redux/modules/routes/r.model';
 import { RouteItem } from '../';
 import { Row } from 'react-bootstrap';
 
 interface IProps {
   isFetching: boolean;
-  data: any;
+  data: IRouteData;
 }
 
 class RouteList extends React.Component<IProps, void> {

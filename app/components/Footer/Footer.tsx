@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router';
+
 const s = require('./Footer.css');
 
 class Footer extends React.Component<void, void> {
