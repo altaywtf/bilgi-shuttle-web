@@ -35,7 +35,16 @@ module.exports = function (config) {
           {
             test: /\.json$/,
             loader: 'json'
-          }
+          },
+          {
+            test: /\.css$/,
+            include: /app/,
+            loaders: [
+              'style',
+              'css?modules&importLoaders=2&sourceMap&localIdentName=[local]__[hash:base64:5]',
+              'postcss'
+            ]
+          },
         ],
         postLoaders: [
           {
@@ -50,6 +59,11 @@ module.exports = function (config) {
             ]
           }
         ]
+      },
+      postcss: function () {
+        return [
+          require("postcss-cssnext")(),
+        ];
       },
       resolve: {
         modulesDirectories: [
