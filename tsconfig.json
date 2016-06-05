@@ -1,0 +1,22 @@
+{
+	"compileOnSave": false,
+	"buildOnSave": false,
+  "compilerOptions": {
+    "outDir": "./public/",
+    "module": "commonjs",
+    "target": "es5",
+    "noEmitHelpers": false,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "jsx": "react"
+  },
+  "exclude": [
+    "node_modules",
+    "public",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
+}

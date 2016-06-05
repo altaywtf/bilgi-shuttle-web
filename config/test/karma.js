@@ -1,0 +1,94 @@
+var webpack = require('webpack');
+
+module.exports = function (config) {
+  var conf = {
+    basePath: '',
+
+    frameworks: [ 'mocha', 'chai', 'es6-shim' ],
+
+    browsers: [],
+
+    files: [ '../webpack/test.js' ],
+
+    plugins: [ 'karma-*' ],
+
+    preprocessors: {
+      '../webpack/test.js': [ 'webpack', 'sourcemap' ],
+    },
+
+    reporters: [ 'mocha', 'coverage' ],
+
+    coverageReporter: {
+      dir: '../../coverage',
+      reporters: []
+    },
+
+    webpack: {
+      devtool: 'inline-source-map',
+      module: {
+        loaders: [
+          {
+            test: /\.tsx?$/,
+            exclude: /node_modules/,
+            loader: 'ts-loader'
+          },
+          {
+            test: /\.json$/,
+            loader: 'json'
+          }
+        ],
+        postLoaders: [
+          {
+            test: /\.tsx?$/,
+            loader: 'istanbul-instrumenter-loader',
+            include: /app/,
+            exclude: [
+              /\.test\.tsx?$/,
+              /\.model\.ts$/,
+              /node_modules/,
+              /config/
+            ]
+          }
+        ]
+      },
+      resolve: {
+        modulesDirectories: [
+          './app',
+          'node_modules'
+        ],
+        extensions: ['', '.json', '.js', '.ts', '.tsx', '.jsx']
+      },
+      externals: {
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': 'window',
+      },
+      plugins: [
+        new webpack.IgnorePlugin(/^fs$/),
+        new webpack.IgnorePlugin(/^react\/addons$/)
+      ]
+    },
+
+    webpackMiddleware: {
+      noInfo: true
+    },
+
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
+    singleRun: false,
+    concurrency: Infinity
+  };
+
+  if (process.env.NODE_ENV === 'ci') {
+    conf.autoWatch = false;
+    conf.singleRun = true;
+    conf.browsers.push('Firefox');
+    conf.coverageReporter.reporters.push( { type : 'lcov', subdir : '.' } );
+  } else {
+    conf.browsers.push('Chrome');
+    conf.coverageReporter.reporters.push( { type : 'html', subdir : 'html' } );
+  }
+
+  config.set(conf);
+}
