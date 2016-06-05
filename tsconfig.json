@@ -5,16 +5,17 @@
     "outDir": "./public/",
     "module": "commonjs",
     "target": "es5",
+    "noEmitHelpers": false,
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
-    "removeComments": false,
+    "removeComments": true,
     "jsx": "react"
   },
   "exclude": [
     "node_modules",
-    "dist",
+    "public",
     "typings/main",
     "typings/main.d.ts"
   ]

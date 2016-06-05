@@ -4,18 +4,16 @@ module.exports = function (config) {
   var conf = {
     basePath: '',
 
-    frameworks: ['mocha', 'chai', 'es6-shim'],
+    frameworks: [ 'mocha', 'chai', 'es6-shim' ],
 
     browsers: [],
 
-    files: ['../webpack/test.js'],
+    files: [ '../webpack/test.js' ],
 
-    plugins: ["karma-*"],
+    plugins: [ 'karma-*' ],
 
     preprocessors: {
-      '../../app/*.ts': ['coverage'],
-      '../../app/*.tsx': ['coverage'],
-      '../webpack/test.js': ['webpack', 'sourcemap']
+      '../webpack/test.js': [ 'webpack', 'sourcemap' ],
     },
 
     reporters: [ 'mocha', 'coverage' ],
@@ -43,15 +41,19 @@ module.exports = function (config) {
           {
             test: /\.tsx?$/,
             loader: 'istanbul-instrumenter-loader',
+            include: /app/,
             exclude: [
-              /node_modules/
+              /\.test\.tsx?$/,
+              /\.model\.ts$/,
+              /node_modules/,
+              /config/
             ]
           }
         ]
       },
       resolve: {
         modulesDirectories: [
-          './src',
+          './app',
           'node_modules'
         ],
         extensions: ['', '.json', '.js', '.ts', '.tsx', '.jsx']
@@ -86,7 +88,6 @@ module.exports = function (config) {
   } else {
     conf.browsers.push('Chrome');
     conf.coverageReporter.reporters.push( { type : 'html', subdir : 'html' } );
-    conf.coverageReporter.reporters.push( { type : 'lcov', subdir : '.' } );
   }
 
   config.set(conf);

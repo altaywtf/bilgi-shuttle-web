@@ -26,9 +26,8 @@ const error: Object = {
 /** Nodes Module: Reducer Tests */
 describe('Nodes Module: Reducer', () => {
 
-  it('handles empty action', () => {
-    const action: I.NodeAction = {};
-    expect(n.nodesReducer(n.initialState, action)).to.eql(n.initialState);
+  it('returns current state by default', () => {
+    expect(n.nodesReducer(n.initialState)).to.eql(n.initialState);
   });
 
   it('handles GET_NODES_REQUEST', () => {
@@ -65,7 +64,7 @@ describe('Nodes Module: Action Creators', () => {
 
     afterEach(() => {
       fetchMock.restore();
-    })
+    });
 
     it('dispatches getNodesSuccess on OK reqs', (done) => {
       fetchMock.mock(`${API_URL}/index.json`, {

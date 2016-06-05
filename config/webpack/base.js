@@ -6,7 +6,7 @@ var postcssAssets = require('postcss-assets');
 var config = {
 
 	output: {
-		path: path.resolve(__dirname, 'public'),
+		path: path.resolve(__dirname, '../../public'),
 		filename: 'bundle.js'
 	},
 
