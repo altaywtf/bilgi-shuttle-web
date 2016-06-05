@@ -2,6 +2,8 @@ import * as React from 'react';
 import { slugify } from '../../helpers/Slugify';
 import { NodeDetail as INodeDetail } from '../../redux/modules/nodes/n.model';
 import { Col, Panel } from 'react-bootstrap';
+const API_URL: string = 'http://api.bilgishuttle.com';
+const s = require('./NodeItem.css');
 
 interface IProps {
 	data: INodeDetail;
@@ -20,9 +22,10 @@ class NodeItem extends React.Component<IProps, any> {
 		const { data } = this.props;
 
 		return (
-			<Col md={4} sm={3} xs={6}>
-				<Panel onClick={() => this.handleClick(data.name)}>
-					{data.name}
+      <Col md={4} sm={4} xs={6} className={s.NodeItemParrent}>
+        <Panel className={s.NodeItem} onClick={() => this.handleClick(data.name)}>
+          <img src={API_URL+data.image}></img>
+          <p>{data.name}</p>
 				</Panel>
 			</Col>
 		);

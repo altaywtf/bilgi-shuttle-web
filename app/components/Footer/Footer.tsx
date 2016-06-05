@@ -1,9 +1,15 @@
 import * as React from 'react';
+import { Link } from 'react-router';
+const s = require('./Footer.css');
 
 class Footer extends React.Component<void, void> {
   render() {
     return (
-      <div>Footer</div>
+      <footer className={s.Footer}>
+        <Link to="/about">
+          <h4>About</h4>
+        </Link>
+      </footer>
     );
   }
 }

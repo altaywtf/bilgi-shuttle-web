@@ -3,11 +3,18 @@ node_js:
   - "5"
 env:
   - NODE_ENV=ci
-before_script:
+cache:
+  directories:
+  - node_modules
+  - typings
+  - screenshots
+install:
   - npm run setup
+before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
 script:
+  - npm run build
   - npm test
 after_success:
   - "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

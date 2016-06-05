@@ -14,7 +14,7 @@ class NodeList extends React.Component<IProps, void> {
 		const nodeList = data.map((d, i) => <NodeItem data={d} key={i} />);
 
 		return (
-			<Row>
+      <Row style={{ marginTop: '16px' }}>
 				{isFetching ? 'Loading' : nodeList}
 			</Row>
 		);

@@ -1,4 +1,5 @@
 export { Header } from './Header/Header';
+export { PageTitle } from './PageTitle/PageTitle';
 export { NodeList } from './NodeList/NodeList';
 export { NodeItem } from './NodeItem/NodeItem';
 export { RouteList } from './RouteList/RouteList';

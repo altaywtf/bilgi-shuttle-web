@@ -1,0 +1,28 @@
+.PageTitle {
+  border: 2px solid black;
+
+  background: #151515;
+  text-align: center;
+
+  & h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+}
+
+.BackButton {
+  background: transparent;
+  border: 1px solid #424242;
+  color: white;
+  margin-top: 16px;
+  padding: 5px 20px;
+  border-radius: 1px;
+
+  &:hover{
+    color: white;
+    background: #424242;
+  }
+}

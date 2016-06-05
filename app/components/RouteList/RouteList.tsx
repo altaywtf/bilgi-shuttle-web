@@ -16,7 +16,7 @@ class RouteList extends React.Component<IProps, void> {
     );
 
 		return (
-			<Row>
+      <Row style={{marginTop: '32px'}}>
 				{isFetching ? 'Loading' : routeList}
 			</Row>
 		);

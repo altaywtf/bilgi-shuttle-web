@@ -16,19 +16,23 @@ Data comes from [bilgi-shuttle-api](https://github.com/bilgishuttle/bilgi-shuttl
 ##About
 Bilgi Shuttle Web uses
 
-- TypeScript flavored [React](https://facebook.github.io/react/) with [React-Router].
+- TypeScript flavored [React](https://facebook.github.io/react/) with [React-Router]().
 
-- [Redux](https://github.com/reactjs/redux) as the data layer, with the assistance of libraries like react-router-redux, redux-thunk and redux-logger.
+- [Redux](https://github.com/reactjs/redux) as the data layer, with the assistance of libraries like [react-router-redux](), [redux-thunk]() and [redux-logger]().
 
 - Polyfill of the native Fetch API, [whatwg-fetch](https://github.com/github/fetch) for async data loading.
 
-- React Bootstrap for styling.
+- [React Bootstrap]() for styling.
 
-- Karma, Mocha and Chai as the core of testing libraries.
+- [Karma](), [Mocha]() and [Chai]() as the core of testing libraries.
 
-- Enzyme for testing React Components.
+- [Enzyme]() for testing React Components.
 
-- fetch-mock and redux-mock-store for testing Redux Modules.
+- [fetch-mock]() and [redux-mock-store]() for testing Redux Modules.
+
+- [istanbul]() for generating code coverage reports.
+
+- [Travis]() and [Coveralls]() as CI tools.
 
 
 ##Installation
@@ -61,9 +65,9 @@ $ npm run build
 ```
 
 ##Screenshots
-<img src="src/images/bs_web_01.png" width="100%">
-<img src="src/images/bs_web_02.png" width="49%">
-<img src="src/images/bs_web_03.png" width="49%">
+<img src="screenshots/bs_web_01.png" width="100%">
+<img src="screenshots/bs_web_02.png" width="49.5%">
+<img src="screenshots/bs_web_03.png" width="49.5%">
 
 
 ##License

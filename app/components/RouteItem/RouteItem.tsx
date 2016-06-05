@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { Col, Panel } from 'react-bootstrap';
 import { normalizeRawData } from '../../helpers/NormalizeRawData';
 import { Timer } from '../';
+const s = require('./RouteItem.css');
 
 class RouteItem extends React.Component<any, void> {
   render() {
@@ -18,20 +20,20 @@ class RouteItem extends React.Component<any, void> {
     });
 
     return (
-      <div className="route">
-        <div className="route-details">
+      <Col md={6} sm={6} xs={12}>
+        <Panel className={s.RouteItem}>
           <h3>{destination}</h3>
           <h4>{timeRemaining ?
-            (data.next.ring === true ? 'Ring' :
+            (data.next.ring ? 'Ring' :
               <Timer seconds={timeRemaining} nextOne={nextOne}/>)
             : 'Done For Today!'}
           </h4>
           <ul>{timeList}</ul>
-          <p className="route-next">
-            {nextOne === 'DONE' ? ' ' : 'Next One: ' + nextOne}
+          <p>
+            {nextOne === 'DONE' ? '' : `Next One: ${nextOne}`}
           </p>
-        </div>
-      </div>
+        </Panel>
+      </Col>
     );
   }
 }

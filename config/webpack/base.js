@@ -1,7 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var postcssAssets = require('postcss-assets');
 
 var config = {
 
@@ -73,8 +71,7 @@ var config = {
 
 	postcss: function () {
 	  return [
-	  	autoprefixer({ browsers: ['last 2 versions'] }),
-	  	postcssAssets({ relative: true })
+	  	require("postcss-cssnext")(),
 	  ];
 	}
 
