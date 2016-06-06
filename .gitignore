@@ -7,6 +7,8 @@ typings
 # Bundles
 public/*
 !public/index.html
+!public/favicon.ico
+
 
 # Logs
 logs

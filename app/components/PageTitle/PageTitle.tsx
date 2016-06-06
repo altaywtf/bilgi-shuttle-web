@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 const s = require('./PageTitle.css');
@@ -28,7 +29,9 @@ class PageTitle extends React.Component<IProps, void> {
           <h2>{title
             ? `Shuttles from ${title.charAt(0).toUpperCase()+title.slice(1)}` : 
             path === '/about' ? 'About' :
-            'v1.0.0'}
+            <a href="https://github.com/bilgishuttle/bilgi-shuttle-web">
+              v1.0.0
+            </a>}
           </h2>
         </Col>
       </Row>
