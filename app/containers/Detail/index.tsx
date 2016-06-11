@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { getRoutes } from '../../redux/modules/routes/r';
-import { Routes as IRoutes } from '../../redux/modules/routes/r.model';
+import { getRoutes } from '../../redux/modules/routes';
+import { Routes as IRoutes } from '../../models/routes';
 import { slugify } from '../../helpers/Slugify';
 const { connect } = require('react-redux');
 

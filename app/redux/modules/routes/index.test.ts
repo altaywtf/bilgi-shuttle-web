@@ -1,8 +1,8 @@
 import { API_URL, createMockStore } from '../../../helpers/TestHelper';
 import { expect } from 'chai';
 
-import * as r from './r';
-import * as I from './r.model';
+import * as r from './';
+import * as I from '../../../models/routes';
 
 const fetchMock = require('fetch-mock');
 
@@ -41,7 +41,7 @@ describe('Routes Module: Reducer', () => {
       isFetching: false,
       data: [],
       error: action.error
-    })
+    });
   });
 });
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router';
 
-const s = require('./Header.css');
+const s = require('./style.css');
 
 class Header extends React.Component<void, void> {
   render() {

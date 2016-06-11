@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { getNodes } from '../../redux/modules/nodes/n';
-import { Nodes as INodes} from '../../redux/modules/nodes/n.model';
+import { getNodes } from '../../redux/modules/nodes';
+import { Nodes as INodes} from '../../models/nodes';
 const { connect } = require('react-redux');
 
 import { Grid } from 'react-bootstrap';
@@ -20,7 +20,7 @@ interface IProps {
 class Home extends React.Component<IProps, any> {
   componentWillMount() {
     const { nodes, getNodes } = this.props;
-    if (nodes.data.length == 0) {
+    if (nodes.data.length === 0) {
       getNodes();
     }
   }

@@ -2,8 +2,8 @@ import { API_URL, createMockStore } from '../../../helpers/TestHelper';
 import { expect } from 'chai';
 const fetchMock = require('fetch-mock');
 
-import * as n from './n';
-import * as I from './n.model';
+import * as n from './';
+import * as I from '../../../models/nodes';
 
 /** Fake Data */
 const data: I.NodeDetail[] = [

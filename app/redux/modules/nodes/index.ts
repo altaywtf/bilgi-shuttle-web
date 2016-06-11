@@ -1,4 +1,4 @@
-import * as I from './n.model';
+import * as I from '../../../models/nodes';
 const API_URL: string = 'http://api.bilgishuttle.com';
 
 /** Initial State */

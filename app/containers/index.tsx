@@ -1,4 +1,4 @@
-export { App } from './App/App';
-export { Home } from './Home/Home';
-export { Detail } from './Detail/Detail';
-export { About } from './About/About';
+export { App } from './App';
+export { Home } from './Home';
+export { Detail } from './Detail';
+export { About } from './About';

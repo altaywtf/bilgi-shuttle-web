@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { RouteData as IRouteData } from '../../redux/modules/routes/r.model';
-import { RouteItem } from '../';
+import { RouteData as IRouteData } from '../../models/routes';
+import { RouteItem } from './RouteItem';
+import { Loader } from '../Loader';
 import { Row } from 'react-bootstrap';
 
 interface IProps {
@@ -9,19 +10,19 @@ interface IProps {
 }
 
 class RouteList extends React.Component<IProps, void> {
-	render () {
+  render () {
     const { data, isFetching } = this.props;
 
     const routeList = data && data.routes.map((d, i) =>
       <RouteItem data={d} key={i} />
     );
 
-		return (
+    return (
       <Row style={{marginTop: '32px'}}>
-				{isFetching ? 'Loading' : routeList}
-			</Row>
-		);
-	}
+        {isFetching ? <Loader /> : routeList}
+      </Row>
+    );
+  }
 }
 
 export { RouteList }

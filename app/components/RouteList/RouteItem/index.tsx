@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { RouteDetail as IRouteDetail } from '../../redux/modules/routes/r.model';
+import { RouteDetail as IRouteDetail } from '../../../models/routes';
+import { normalizeRawData } from '../../../helpers/NormalizeRawData';
+import { Timer } from '../../Timer';
 import { Col, Panel } from 'react-bootstrap';
-import { normalizeRawData } from '../../helpers/NormalizeRawData';
-import { Timer } from '../';
 
-const s = require('./RouteItem.css');
+const s = require('./style.css');
 
 interface IProps {
   data: IRouteDetail;

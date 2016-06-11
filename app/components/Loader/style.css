@@ -1,0 +1,14 @@
+.Spinner {
+  height: 80px;
+  width: 80px;
+  animation: rotate 0.8s infinite linear;
+  border: 6px solid #D32F2F;
+  border-right-color: transparent;
+  border-radius: 50%;
+  margin: 40px auto;
+}
+
+@keyframes rotate {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
+}

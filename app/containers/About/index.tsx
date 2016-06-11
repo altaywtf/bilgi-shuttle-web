@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Grid, Row, Col, Panel } from 'react-bootstrap';
 
-const s = require('./About.css');
+const s = require('./style.css');
 
 class About extends React.Component<void, void> {
   render() {

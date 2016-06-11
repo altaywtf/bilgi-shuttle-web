@@ -9,7 +9,7 @@ cache:
   - typings
   - screenshots
 install:
-  - npm run setup
+  - npm install
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"

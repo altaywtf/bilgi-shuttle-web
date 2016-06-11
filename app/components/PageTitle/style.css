@@ -15,18 +15,30 @@
   & a {
     color: white;
   }
+
+  @media (width < 768px) {
+    & h2 {
+      font-size: 1.4rem;
+    }
+  }
 }
 
 .BackButton {
   background: transparent;
   border: 1px solid #424242;
   color: white;
-  margin-top: 16px;
-  padding: 5px 20px;
-  border-radius: 1px;
+  margin-top: 14px;
+  padding: 5px 15px;
+  border-radius: 2px;
+  font-size: 1.6rem;
 
   &:hover{
     color: white;
     background: #424242;
+  }
+
+  @media (width < 768px) {
+    font-size: 1rem;
+    margin-top: 14px;
   }
 }

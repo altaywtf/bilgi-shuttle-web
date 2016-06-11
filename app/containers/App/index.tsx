@@ -3,12 +3,12 @@ import { Header } from '../../components';
 import { PageTitle } from '../../components';
 import { Footer } from '../../components';
 
-const s = require('./App.css');
+const s = require('./style.css');
 
 class App extends React.Component<any, void> {
-	render() {
+  render() {
     const { params, location, children } = this.props;
-		return (
+    return (
       <section className={s.App}>
         <Header />
         <PageTitle title={params.node}
@@ -17,9 +17,9 @@ class App extends React.Component<any, void> {
           {children}
         </section>
         <Footer />
-			</section>
-		);
-	}
+      </section>
+    );
+  }
 }
 
 export { App }

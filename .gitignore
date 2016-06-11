@@ -19,4 +19,3 @@ node_modules
 
 # Coverage Directory and Coveralls Configuration
 coverage
-.coveralls.yml

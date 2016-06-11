@@ -4,7 +4,7 @@
   "description": "Basic but useful web application for listing the shuttle routes and times of İstanbul Bilgi University",
   "main": "server.js",
   "scripts": {
-    "setup": "npm install && typings install",
+    "postinstall": "typings install",
     "start": "NODE_ENV=development node server.js",
     "build": "NODE_ENV=production webpack --config ./config/webpack/prod.js",
     "test": "karma start ./config/test/karma.js"
