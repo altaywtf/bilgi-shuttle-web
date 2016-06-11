@@ -53,6 +53,7 @@ module.exports = function (config) {
             include: /app/,
             exclude: [
               /\.test\.tsx?$/,
+              /TestHelper\.tsx?$/,
               /\.model\.ts$/,
               /node_modules/,
               /config/
