@@ -1,7 +1,0 @@
-{
-  "generator-react-webpack": {
-    "appName": "bilgiShuttleWebapp",
-    "style": "scss",
-    "postcss": true
-  }
-}

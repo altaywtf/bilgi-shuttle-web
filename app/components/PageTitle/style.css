@@ -1,0 +1,44 @@
+.PageTitle {
+  border: 2px solid black;
+
+  background: #151515;
+  text-align: center;
+
+  & h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  & a {
+    color: white;
+  }
+
+  @media (width < 768px) {
+    & h2 {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.BackButton {
+  background: transparent;
+  border: 1px solid #424242;
+  color: white;
+  margin-top: 14px;
+  padding: 5px 15px;
+  border-radius: 2px;
+  font-size: 1.6rem;
+
+  &:hover{
+    color: white;
+    background: #424242;
+  }
+
+  @media (width < 768px) {
+    font-size: 1rem;
+    margin-top: 14px;
+  }
+}

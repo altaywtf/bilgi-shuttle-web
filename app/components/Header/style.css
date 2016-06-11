@@ -1,0 +1,26 @@
+.Header {
+  background: #D32F2F;
+
+  & a {
+    color: white;
+    &:hover, &:active, &:focus {
+      color: white;
+    }
+  }
+
+  & h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    margin: 0 auto;
+    padding: 30px 0;
+    color: white;
+  }
+
+  @media (max-width: 767px) {
+    & h1 {
+      padding: 20px 0;
+      font-size: 2.2rem;
+    }
+  }
+
+}

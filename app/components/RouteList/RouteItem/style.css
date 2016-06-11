@@ -1,0 +1,71 @@
+.RouteItem {
+  min-height: 280px;
+  border-radius: 1px;
+  border-bottom: 2px solid #D32F2F;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  & :global(.panel-body) {
+    padding: 5px;
+  };
+
+  & h3 {
+    font-weight: 600;
+    font-size: 2.6rem;
+  }
+
+  & h4 {
+    font-weight: 600;
+    font-size: 2.2rem;
+    color: #D32F2F;
+    padding: 15px;
+  }
+
+  & ul {
+    list-style: none;
+    padding: 0;
+
+    & li {
+      margin: 1px auto;
+    }
+  }
+
+  & p {
+    padding: 5px 45px;
+    color: #525252;
+    font-weight: 600;
+    font-size: 1.6rem;
+  }
+
+  @media (width <= 320px) {
+    min-height: 200px;
+
+    & h3 {
+      font-size: 2rem;
+    }
+
+    & h4 {
+      font-size: 1.6rem;
+    }
+
+    & ul {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (width < 768px) {
+    min-height: 200px;
+
+    & h3 {
+      font-size: 2.4rem;
+    }
+
+    & h4 {
+      font-size: 1.8rem;
+    }
+
+    & ul {
+      font-size: 1.2rem;
+    }
+  }
+
+}

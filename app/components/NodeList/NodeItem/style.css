@@ -1,0 +1,47 @@
+.NodeItemParrent {
+  display: inline-block;
+  float: none!important;
+  margin-right:-4px;
+}
+
+.NodeItem {
+  min-height: 160px;
+  margin: 8px 8px;
+
+  transition: all 0.2s ease-in-out;
+  border-radius: 1px;
+  border-bottom: 2px solid #D32F2F;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 5px 5px rgba(0,0,0,0.23);
+  }
+
+  & p {
+    font-size: 2.2rem;
+    color: #151515;
+    display: block;
+  }
+
+  & img {
+    margin: 40px auto 30px auto;
+    height: 80px;
+  }
+
+  @media (max-width: 767px) {
+    margin: 12px 0px;
+    min-height: 100px;
+
+    & p {
+      font-size: 1.6rem;
+    }
+
+    & img {
+      margin: 20px auto 15px auto;
+      height: 45px;
+    }
+  }
+
+}

@@ -1,0 +1,18 @@
+.App {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+
+  text-align: center;
+  background: #F0F0F0;
+
+  & a {
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+
+.Content {
+  min-height: 84vh;
+}
