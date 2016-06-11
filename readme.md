@@ -1,9 +1,7 @@
 #Bilgi Shuttle Web Application
 
-[![Build Status](https://travis-ci.org/bilgishuttle/bilgi-shuttle-web.svg?branch=develop)](https://travis-ci.org/bilgishuttle/bilgi-shuttle-web)
-[![Coverage Status](https://coveralls.io/repos/github/bilgishuttle/bilgi-shuttle-web/badge.svg?branch=develop)](https://coveralls.io/github/bilgishuttle/bilgi-shuttle-web?branch=develop)
-[![Dependency Status](https://david-dm.org/bilgishuttle/bilgi-shuttle-web.svg)]()
-[![devDependency Status](https://david-dm.org/bilgishuttle/bilgi-shuttle-web/dev-status.svg)]()
+[![Build Status](https://travis-ci.org/bilgishuttle/bilgi-shuttle-web.svg?branch=master)](https://travis-ci.org/bilgishuttle/bilgi-shuttle-web)
+[![Coverage Status](https://coveralls.io/repos/github/bilgishuttle/bilgi-shuttle-web/badge.svg?branch=master)](https://coveralls.io/github/bilgishuttle/bilgi-shuttle-web?branch=master)
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000)](https://github.com/bilgishuttle/bilgi-shuttle-web)
 
 Basic but useful cross-platform application for listing the shuttle routes and times of İstanbul Bilgi University.
@@ -22,17 +20,17 @@ Bilgi Shuttle Web uses
 
 - Polyfill of the native Fetch API, [whatwg-fetch](https://github.com/github/fetch) for async data loading.
 
-- [React Bootstrap]() for styling.
+- [React Bootstrap](https://github.com/react-bootstrap) for styling.
 
-- [Karma](), [Mocha]() and [Chai]() as the core of testing libraries.
+- [Karma](https://github.com/karma-runner/karma), [Mocha](https://github.com/mochajs/mocha) and [Chai](https://github.com/chaijs/chai) as the core of testing libraries.
 
-- [Enzyme]() for testing React Components.
+- [Enzyme](https://github.com/airbnb/enzyme) for testing React Components.
 
-- [fetch-mock]() and [redux-mock-store]() for testing Redux Modules.
+- [fetch-mock](https://github.com/wheresrhys/fetch-mock) and [redux-mock-store](https://github.com/arnaudbenard/redux-mock-store) for testing Redux Modules.
 
-- [istanbul]() for generating code coverage reports.
+- [istanbul](https://github.com/gotwarlost/istanbul) for generating code coverage reports.
 
-- [Travis]() and [Coveralls]() as CI tools.
+- [Travis](http://travis-ci.org) and [Coveralls](http://coveralls.io) as CI tools.
 
 
 ##Installation
