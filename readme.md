@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/bilgishuttle/bilgi-shuttle-web.svg?branch=master)](https://travis-ci.org/bilgishuttle/bilgi-shuttle-web)
 [![Coverage Status](https://coveralls.io/repos/github/bilgishuttle/bilgi-shuttle-web/badge.svg?branch=master)](https://coveralls.io/github/bilgishuttle/bilgi-shuttle-web?branch=master)
+[![David](https://img.shields.io/david/bilgishuttle/bilgi-shuttle-web.svg?maxAge=2592000)](https://github.com/bilgishuttle/bilgi-shuttle-web/blob/master/package.json)
+[![David](https://img.shields.io/david/dev/bilgishuttle/bilgi-shuttle-web.svg?maxAge=2592000)](https://github.com/bilgishuttle/bilgi-shuttle-web/blob/master/package.json)
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000)](https://github.com/bilgishuttle/bilgi-shuttle-web)
 
 Basic but useful cross-platform application for listing the shuttle routes and times of İstanbul Bilgi University.
