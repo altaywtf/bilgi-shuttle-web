@@ -6,7 +6,6 @@ env:
 cache:
   directories:
   - node_modules
-  - typings
   - screenshots
 install:
   - npm install
