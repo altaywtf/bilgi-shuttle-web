@@ -5,7 +5,6 @@ env:
   - NODE_ENV=ci
 cache:
   directories:
-  - node_modules
   - screenshots
 install:
   - npm install
