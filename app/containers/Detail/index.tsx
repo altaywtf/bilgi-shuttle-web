@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
+import { slugify } from '../../helpers/Utils';
+
 import { getRoutes } from '../../redux/modules/routes';
 import { Routes as IRoutes } from '../../models/routes';
-import { slugify } from '../../helpers/Slugify';
-const { connect } = require('react-redux');
 
 import { Grid } from 'react-bootstrap';
 import { RouteList } from '../../components';
@@ -15,47 +16,42 @@ interface IProps {
   };
 }
 
-@connect(
-  state => ({ routes: state.routes }),
-  dispatch => ({
-    getRoutes: (node: string) => dispatch(getRoutes(node))
-  })
-)
-class Detail extends React.Component<IProps, any> {
+export class Detail extends React.Component<IProps, any> {
   constructor(props) {
     super(props);
     this.getCurrentRoutes = this.getCurrentRoutes.bind(this);
   }
 
   componentWillMount() {
-    const { params, routes, getRoutes } = this.props;
-    const isFetchedBefore: boolean = routes.data.some(d =>
-      slugify(d.start_node.name) === params.node
-    );
+    const { getRoutes, routes: { data }, params: { node } } = this.props;
+    const isFetchedBefore = data.some(d => slugify(d.start_node.name) === node);
+
     if (!isFetchedBefore) {
-      getRoutes(params.node);
+      getRoutes(node);
     }
   }
 
   getCurrentRoutes() {
-    const { routes, params } = this.props;
-    return routes.data.filter(d =>
-      slugify(d.start_node.name) === params.node
-    )[0];
+    const { routes: { data }, params: { node } } = this.props;
+    return data.filter(d => slugify(d.start_node.name) === node)[0];
   }
 
   render() {
-    const { routes } = this.props;
+    const { routes: { isFetching } } = this.props;
+    const data = this.getCurrentRoutes();
 
     return (
       <Grid>
-        <RouteList
-          data={this.getCurrentRoutes()}
-          isFetching={routes.isFetching}
-        />
+        <RouteList isFetching={isFetching}>
+        {data && data.routes.map((d, i) => <RouteList.Item key={i} data={d} />)}
+        </RouteList>
+
       </Grid>
     );
   }
 }
 
-export { Detail }
+export default connect(
+  state => ({ routes: state.routes }),
+  { getRoutes }
+)(Detail);

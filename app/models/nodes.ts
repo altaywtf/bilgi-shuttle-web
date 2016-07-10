@@ -6,7 +6,7 @@ export interface Nodes {
 
 export interface NodeAction {
   type?: string;
-  data?: NodeDetail[];
+  payload?: NodeDetail[];
   error?: any;
 }
 

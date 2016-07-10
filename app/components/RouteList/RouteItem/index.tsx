@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteDetail as IRouteDetail } from '../../../models/routes';
-import { normalizeRawData } from '../../../helpers/NormalizeRawData';
+import { normalizeRawData } from '../../../helpers/Utils';
 import { Timer } from '../../Timer';
 import { Col, Panel } from 'react-bootstrap';
 

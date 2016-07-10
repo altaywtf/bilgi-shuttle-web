@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IndexRoute, Route } from 'react-router';
-import { App, Home, Detail, About } from './containers';
+import { App, Home, Detail, About } from '../containers';
 
 function getRoutes(store) {
   return (

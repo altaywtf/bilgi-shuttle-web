@@ -1,4 +1,4 @@
-import { API_URL, createMockStore } from '../../../helpers/TestHelper';
+import { API_URL, createMockStore } from '../../../helpers/Test';
 import { expect } from 'chai';
 const fetchMock = require('fetch-mock');
 
@@ -42,7 +42,7 @@ describe('Nodes Module: Reducer', () => {
     const action: I.NodeAction = n.getNodesSuccess(data);
     expect(n.nodesReducer(n.initialState, action)).to.eql({
       isFetching: false,
-      data: action.data
+      data: action.payload
     });
   });
 
@@ -79,7 +79,7 @@ describe('Nodes Module: Action Creators', () => {
 
       const expectedActions: I.NodeAction[] = [
         { type: n.GET_NODES_REQUEST },
-        { type: n.GET_NODES_SUCCESS, data }
+        { type: n.GET_NODES_SUCCESS, payload: data }
       ];
 
       store.dispatch(action)
@@ -123,7 +123,7 @@ describe('Nodes Module: Action Creators', () => {
     it('has the correct type and payload', () => {
       const action: I.NodeAction = n.getNodesSuccess(data);
       expect(action.type).to.eql(n.GET_NODES_SUCCESS);
-      expect(action.data).to.eql(data);
+      expect(action.payload).to.eql(data);
     });
   });
 
