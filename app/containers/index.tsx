@@ -1,10 +1,6 @@
-/** Case 1 */
+import App from './App';
 import Home from './Home';
-export { Home };
+import Detail from './Detail';
+import About from './About';
 
-/** Case 2 */
-export { Home2 } from './Home2';
-
-export { App } from './App';
-export { Detail } from './Detail';
-export { About } from './About';
+export { App, Home, Detail, About };

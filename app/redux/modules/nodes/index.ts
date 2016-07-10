@@ -1,4 +1,6 @@
 import * as I from '../../../models/nodes';
+import { assign } from '../../../helpers/Utils';
+
 const API_URL: string = 'http://api.bilgishuttle.com';
 
 /** Initial State */
@@ -11,18 +13,18 @@ export const initialState: I.Nodes = {
 export function nodesReducer(state = initialState, action: I.NodeAction = {}) {
   switch (action.type) {
     case GET_NODES_REQUEST:
-      return Object.assign({}, state, {
+      return assign(state, {
         isFetching: true
       });
 
     case GET_NODES_SUCCESS:
-      return Object.assign({}, state, {
+      return assign(state, {
         isFetching: false,
-        data: action.data
+        data: action.payload
       });
 
     case GET_NODES_FAILURE:
-      return Object.assign({}, state, {
+      return assign(state, {
         isFetching: false,
         error: action.error
       });
@@ -62,7 +64,7 @@ export const GET_NODES_SUCCESS: string = 'GET_NODES_SUCCESS';
 export function getNodesSuccess(data: I.NodeDetail[]): I.NodeAction {
   return {
     type: GET_NODES_SUCCESS,
-    data
+    payload: data
   };
 }
 

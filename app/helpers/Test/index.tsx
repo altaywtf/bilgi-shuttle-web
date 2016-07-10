@@ -12,29 +12,10 @@ import thunk from 'redux-thunk';
 import { createStore } from 'redux';
 const configureStore = require('redux-mock-store');
 
-function createMockStore(data) {
+function createMockStore(initialState) {
   const middlewares = [thunk];
   const mockStore = configureStore(middlewares);
-  return mockStore(data);
+  return mockStore(initialState);
 }
 
-/** Render Component */
-function renderComponent(Component, appState?, componentProps?) {
-
-  const store: Redux.Store = createStore(rootReducer, appState);
-
-  const component = mount(
-    <Provider store={store}>
-      <Component {...componentProps} />
-    </Provider>
-  );
-
-  return component;
-}
-
-/** Mount Component */
-function mountComponent(Component, props?) {
-  return mount(<Component {...props} />);
-}
-
-export { API_URL, createMockStore, mountComponent, renderComponent }
+export { API_URL, createMockStore }
