@@ -11,7 +11,11 @@ interface IProps {
   getNodes: Redux.ActionCreator;
 }
 
-class Home extends React.Component<IProps, any> {
+@connect(
+  state => ({nodes: state.nodes}),
+  { getNodes }
+)
+class Home2 extends React.Component<IProps, any> {
   componentWillMount() {
     const { nodes, getNodes } = this.props;
     if (nodes.data.length === 0) {
@@ -19,34 +23,15 @@ class Home extends React.Component<IProps, any> {
     }
   }
 
-  handleClick() {
-    console.info('CLICKED!');
-  }
-
   render() {
     const { nodes } = this.props;
 
     return (
       <Grid>
-        <NodeList
-          data={nodes.data}
-          isFetching={nodes.isFetching}
-        />
-        <button
-          name="homeBtn"
-          type="button"
-          onClick={() => this.handleClick()}
-        >
-          Click Me
-        </button>
+        <NodeList data={nodes.data} isFetching={nodes.isFetching} />
       </Grid>
     );
   }
 }
 
-export { Home };
-
-export default connect(
-  state => ({nodes: state.nodes}),
-  { getNodes }
-)(Home);
+export { Home2 };

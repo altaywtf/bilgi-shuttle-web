@@ -12,7 +12,7 @@ interface IProps {
 
 class NodeItem extends React.Component<IProps, any> {
   static contextTypes: React.ValidationMap<any> = {
-    router: React.PropTypes.object.isRequired
+    router: React.PropTypes.object
   };
 
   handleClick(node: string) {

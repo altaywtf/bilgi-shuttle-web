@@ -16,6 +16,7 @@
     "redux-form": "registry:dt/redux-form#4.0.3+20160201090541",
     "redux-mock-store": "registry:dt/redux-mock-store#0.0.6+20160514173414",
     "redux-thunk": "registry:dt/redux-thunk#2.0.1+20160317120654",
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723",
     "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20160412133644"
   },
   "dependencies": {

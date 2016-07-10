@@ -17,9 +17,7 @@ interface IProps {
 
 @connect(
   state => ({ routes: state.routes }),
-  dispatch => ({
-    getRoutes: (node: string) => dispatch(getRoutes(node))
-  })
+  { getRoutes }
 )
 class Detail extends React.Component<IProps, any> {
   constructor(props) {
