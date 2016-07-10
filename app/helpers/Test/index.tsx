@@ -5,31 +5,17 @@ const API_URL: string = 'http://api.bilgishuttle.com';
 import * as React from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
-import { rootReducer } from '../redux/reducers';
+import { rootReducer } from '../../redux/reducers';
 
 /** Redux Mock Store Configuration */
 import thunk from 'redux-thunk';
 import { createStore } from 'redux';
 const configureStore = require('redux-mock-store');
 
-function createMockStore(data) {
+function createMockStore(initialState) {
   const middlewares = [thunk];
   const mockStore = configureStore(middlewares);
-  return mockStore(data);
+  return mockStore(initialState);
 }
 
-/** Render Component */
-function renderComponent(ComponentClass, state?, props?) {
-
-  const store: Redux.Store = createStore(rootReducer, state);
-
-  const component = mount(
-    <Provider store={store}>
-      <ComponentClass {...props} />
-    </Provider>
-  );
-
-  return component;
-}
-
-export { API_URL, createMockStore, renderComponent }
+export { API_URL, createMockStore }

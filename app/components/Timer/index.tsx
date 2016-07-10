@@ -1,6 +1,16 @@
 import * as React from 'react';
 
-class Timer extends React.Component<any, any> {
+interface IProps {
+  seconds: number;
+  nextOne: string;
+}
+
+interface IState {
+  timeRemaining?: number;
+  timeDisplay?: string;
+};
+
+class Timer extends React.Component<IProps, IState> {
   interval: any;
 
   constructor(props) {
@@ -22,6 +32,7 @@ class Timer extends React.Component<any, any> {
 
   tick() {
     const { timeRemaining } = this.state;
+    const { nextOne } = this.props;
 
     this.setState({
       timeRemaining: timeRemaining - 1
@@ -43,16 +54,16 @@ class Timer extends React.Component<any, any> {
     minutes = minutes < 10 ? '0' + minutes : minutes;
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
-    const timeDisplay = `${hours}${minutes}:${seconds}`;
-
-    this.setState({ timeDisplay });
+    this.setState({
+      timeDisplay: `${hours}${minutes}:${seconds}`
+    });
 
     if (timeRemaining <= 0) {
       let c: any = new Date();
       let d: any = new Date();
 
-      let nt1: string = this.props.nextOne.split(':')[0];
-      let nt2: string = this.props.nextOne.split(':')[1];
+      let nt1: string = nextOne.split(':')[0];
+      let nt2: string = nextOne.split(':')[1];
 
       d.setHours(nt1, nt2, 0);
 

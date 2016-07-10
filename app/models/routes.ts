@@ -6,7 +6,7 @@ export interface Routes {
 
 export interface RouteAction {
   type?: string;
-  data?: RouteData;
+  payload?: RouteData;
   error?: any;
 }
 

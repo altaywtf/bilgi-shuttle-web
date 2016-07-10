@@ -1,4 +1,4 @@
-import { API_URL, createMockStore } from '../../../helpers/TestHelper';
+import { API_URL, createMockStore } from '../../../helpers/Test';
 import { expect } from 'chai';
 
 import * as r from './';
@@ -7,7 +7,31 @@ import * as I from '../../../models/routes';
 const fetchMock = require('fetch-mock');
 
 /** Mock Data */
-const data: I.RouteData = { "routes": [{ "raw_data": "08:00 - Ring - 20:00", "destination": "Santral", "next": { "in_secs": 23159, "ring": false, "next_next_one": "20:00" }, "start": { "image": "/ media / nodes / kabatas_JtKuUYU.png", "id": 8, "name": "Kabataş" }, "destination_image": "/ media / nodes / santral_AD5d4PA.png" }, { "raw_data": "08:00 - Ring - 10:00 - 10:30 - 11:00 - 11:30 - 12:00 - 12:30 - 13:00 - 13:30 - 14:00 - 14:30 - 15:00 - 15:30 - 16:00 - 16:30 - 17:00 - Ring - 17:30", "destination": "Dolapdere", "next": { "in_secs": 23159, "ring": false, "next_next_one": "10:00" }, "start": { "image": "/ media / nodes / kabatas_JtKuUYU.png", "id": 8, "name": "Kabataş" }, "destination_image": "/ media / nodes / dolapdere_cIzy2XC.png" }], "start_node": { "image": "/ media / nodes / kabatas_JtKuUYU.png", "id": 8, "name": "Kabataş" } };
+const data: I.RouteData = [{
+  'routes': [
+    {
+      'raw_data': '08:00 - Ring - 20:00',
+      'destination': 'Santral',
+      'next': {
+        'in_secs': 23159,
+        'ring': false,
+        'next_next_one': '20:00'
+      },
+      'start': {
+        'image': '/media/nodes/kabatas_JtKuUYU.png',
+        'id': 8,
+        'name': 'Kabataş'
+      },
+      'destination_image': '/media/nodes/santral_AD5d4PA.png'
+    }
+  ],
+  'start_node': {
+    'image': '/media/nodes/kabatas_JtKuUYU.png',
+    'id': 8,
+    'name':
+    'Kabataş'
+  }
+}];
 
 const error: Object = {
   message: 'Error'
@@ -30,7 +54,9 @@ describe('Routes Module: Reducer', () => {
 
   it('handles GET_ROUTES_SUCCESS', () => {
     const action: I.RouteAction = r.getRoutesSuccess(data);
-    expect(r.routesReducer(r.initialState, action).data[0]).to.eql(action.data);
+    expect(r.routesReducer(r.initialState, action).data[0]).to.eql(
+      action.payload
+    );
     expect(r.routesReducer(r.initialState, action).isFetching).to.be.false;
   });
 
@@ -64,7 +90,7 @@ describe('Routes Module: Action Creators', () => {
 
       const expectedActions: I.RouteAction[] = [
         { type: r.GET_ROUTES_REQUEST },
-        { type: r.GET_ROUTES_SUCCESS, data }
+        { type: r.GET_ROUTES_SUCCESS, payload: data }
       ];
 
       store.dispatch(action)
@@ -105,7 +131,7 @@ describe('Routes Module: Action Creators', () => {
     it('has the correct type and payload', () => {
       const action: I.RouteAction = r.getRoutesSuccess(data);
       expect(action.type).to.eql(r.GET_ROUTES_SUCCESS);
-      expect(action.data).to.eql(data);
+      expect(action.payload).to.eql(data);
     });
   });
 

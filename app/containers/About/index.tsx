@@ -3,7 +3,7 @@ import { Grid, Row, Col, Panel } from 'react-bootstrap';
 
 const s = require('./style.css');
 
-class About extends React.Component<void, void> {
+export class About extends React.Component<void, void> {
   render() {
     return (
       <Grid>
@@ -26,4 +26,4 @@ class About extends React.Component<void, void> {
   }
 }
 
-export { About }
+export default About;

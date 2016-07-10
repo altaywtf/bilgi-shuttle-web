@@ -1,25 +1,22 @@
 import * as React from 'react';
-import { RouteData as IRouteData } from '../../models/routes';
 import { RouteItem } from './RouteItem';
 import { Loader } from '../Loader';
 import { Row } from 'react-bootstrap';
 
 interface IProps {
+  children?: any;
   isFetching: boolean;
-  data: IRouteData;
 }
 
 class RouteList extends React.Component<IProps, void> {
-  render () {
-    const { data, isFetching } = this.props;
+  static Item = RouteItem;
 
-    const routeList = data && data.routes.map((d, i) =>
-      <RouteItem data={d} key={i} />
-    );
+  render () {
+    const { children, isFetching } = this.props;
 
     return (
       <Row style={{marginTop: '32px'}}>
-        {isFetching ? <Loader /> : routeList}
+        {isFetching ? <Loader /> : children}
       </Row>
     );
   }

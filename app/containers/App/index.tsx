@@ -5,14 +5,26 @@ import { Footer } from '../../components';
 
 const s = require('./style.css');
 
-class App extends React.Component<any, void> {
+interface IProps {
+  children?: any;
+  location?: {
+    pathname: string
+  };
+  params?: {
+    node: string
+  };
+}
+
+export class App extends React.Component<IProps, void> {
   render() {
     const { params, location, children } = this.props;
     return (
       <section className={s.App}>
         <Header />
-        <PageTitle title={params.node}
-          path={location.pathname}/>
+        <PageTitle
+          title={params.node}
+          path={location.pathname}
+        />
         <section className={s.Content}>
           {children}
         </section>
@@ -22,4 +34,4 @@ class App extends React.Component<any, void> {
   }
 }
 
-export { App }
+export default App;

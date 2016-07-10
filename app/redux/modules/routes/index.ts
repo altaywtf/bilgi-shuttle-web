@@ -1,4 +1,6 @@
 import * as I from '../../../models/routes';
+import { assign } from '../../../helpers/Utils';
+
 const API_URL: string = 'http://api.bilgishuttle.com';
 
 /** Initial State */
@@ -9,21 +11,24 @@ export const initialState: I.Routes = {
 };
 
 /** Reducer */
-export function routesReducer(state = initialState, action: I.RouteAction = {}) {
+export function routesReducer(
+  state = initialState,
+  action: I.RouteAction = {}
+) {
   switch (action.type) {
     case GET_ROUTES_REQUEST:
-      return Object.assign({}, state, {
+      return assign(state, {
         isFetching: true
       });
 
     case GET_ROUTES_SUCCESS:
-      return Object.assign({}, state, {
+      return assign(state, {
         isFetching: false,
-        data: [...state.data, action.data]
+        data: [...state.data, action.payload]
       });
 
     case GET_ROUTES_FAILURE:
-      return Object.assign({}, state, {
+      return assign(state, {
         isFetching: false,
         error: action.error
       });
@@ -62,7 +67,7 @@ export const GET_ROUTES_SUCCESS: string = 'GET_ROUTES_SUCCESS';
 export function getRoutesSuccess(data: I.RouteData): I.RouteAction {
   return {
     type: GET_ROUTES_SUCCESS,
-    data
+    payload: data
   };
 }
 
