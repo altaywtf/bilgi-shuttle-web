@@ -1,17 +1,17 @@
 #Bilgi Shuttle Web Application
 
-[![Build Status](https://travis-ci.org/bilgishuttle/bilgi-shuttle-web.svg?branch=master)](https://travis-ci.org/bilgishuttle/bilgi-shuttle-web)
+[![Build Status](https://travis-ci.org/LaborWorks/bilgi-shuttle-web.svg?branch=master)](https://travis-ci.org/LaborWorks/bilgi-shuttle-web)
 [![Coverage Status](https://coveralls.io/repos/github/bilgishuttle/bilgi-shuttle-web/badge.svg?branch=master)](https://coveralls.io/github/bilgishuttle/bilgi-shuttle-web?branch=master)
-[![David](https://img.shields.io/david/bilgishuttle/bilgi-shuttle-web.svg?maxAge=2592000)](https://github.com/bilgishuttle/bilgi-shuttle-web/blob/master/package.json)
-[![David](https://img.shields.io/david/dev/bilgishuttle/bilgi-shuttle-web.svg?maxAge=2592000)](https://github.com/bilgishuttle/bilgi-shuttle-web/blob/master/package.json)
-[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000)](https://github.com/bilgishuttle/bilgi-shuttle-web)
+[![David](https://img.shields.io/david/LaborWorks/bilgi-shuttle-web.svg?maxAge=2592000)](https://github.com/LaborWorks/bilgi-shuttle-web/blob/master/package.json)
+[![David](https://img.shields.io/david/dev/LaborWorks/bilgi-shuttle-web.svg?maxAge=2592000)](https://github.com/LaborWorks/bilgi-shuttle-web/blob/master/package.json)
+[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000)](https://github.com/LaborWorks/bilgi-shuttle-web)
 
 Basic but useful cross-platform application for listing the shuttle routes and times of İstanbul Bilgi University.
 
-Data comes from [bilgi-shuttle-api](https://github.com/bilgishuttle/bilgi-shuttle-api/), processed and shown in this application.
+Data comes from [bilgi-shuttle-api](https://github.com/LaborWorks/bilgi-shuttle-api/), processed and shown in this application.
 
-- iOS version: [bilgi-shuttle-ios](https://github.com/bilgishuttle/bilgi-shuttle-ios)
-- Android version: [bilgi-shuttle-android](https://github.com/bilgishuttle/bilgi-shuttle-android)
+- iOS version: [bilgi-shuttle-ios](https://github.com/LaborWorks/bilgi-shuttle-ios)
+- Android version: [bilgi-shuttle-android](https://github.com/LaborWorks/bilgi-shuttle-android)
 
 ##About
 Bilgi Shuttle Web uses
