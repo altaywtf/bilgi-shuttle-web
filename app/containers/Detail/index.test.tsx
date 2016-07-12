@@ -26,8 +26,7 @@ const data = [{
   'start_node': {
     'image': '/media/nodes/kabatas_JtKuUYU.png',
     'id': 8,
-    'name':
-    'Kabataş'
+    'name': 'Kabataş'
   }
 }];
 

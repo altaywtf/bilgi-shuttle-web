@@ -6,7 +6,7 @@ module.exports = function (config) {
 
     frameworks: [ 'mocha', 'chai', 'es6-shim' ],
 
-    browsers: [],
+    browsers: ['Firefox'],
 
     files: [ '../webpack/test.js' ],
 
@@ -104,7 +104,6 @@ module.exports = function (config) {
   if (process.env.NODE_ENV === 'ci') {
     conf.autoWatch = false;
     conf.singleRun = true;
-    conf.browsers.push('Firefox');
     conf.coverageReporter.reporters.push( { type : 'lcov', subdir : '.' } );
   } else {
     conf.browsers.push('Chrome');

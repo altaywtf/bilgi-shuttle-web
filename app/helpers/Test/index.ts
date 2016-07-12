@@ -9,7 +9,6 @@ import { rootReducer } from '../../redux/reducers';
 
 /** Redux Mock Store Configuration */
 import thunk from 'redux-thunk';
-import { createStore } from 'redux';
 const configureStore = require('redux-mock-store');
 
 function createMockStore(initialState) {
