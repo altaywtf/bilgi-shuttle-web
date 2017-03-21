@@ -1,4 +1,4 @@
-#Bilgi Shuttle Web Application
+# Bilgi Shuttle Web Application
 
 [![Build Status](https://travis-ci.org/LaborWorks/bilgi-shuttle-web.svg?branch=master)](https://travis-ci.org/LaborWorks/bilgi-shuttle-web)
 [![Coverage Status](https://coveralls.io/repos/github/bilgishuttle/bilgi-shuttle-web/badge.svg?branch=master)](https://coveralls.io/github/bilgishuttle/bilgi-shuttle-web?branch=master)
@@ -13,7 +13,7 @@ Data comes from [bilgi-shuttle-api](https://github.com/LaborWorks/bilgi-shuttle-
 - iOS version: [bilgi-shuttle-ios](https://github.com/LaborWorks/bilgi-shuttle-ios)
 - Android version: [bilgi-shuttle-android](https://github.com/LaborWorks/bilgi-shuttle-android)
 
-##About
+## About
 Bilgi Shuttle Web uses
 
 - TypeScript flavored [React](https://facebook.github.io/react/) with [React-Router]().
@@ -35,13 +35,13 @@ Bilgi Shuttle Web uses
 - [Travis](http://travis-ci.org) and [Coveralls](http://coveralls.io) as CI tools.
 
 
-##Installation
+## Installation
 ```bash
 # Install node (or update if you have an older version, I use v6.2.0 atm)
 https://nodejs.org/
 
 # Clone the repository
-$ git clone https://github.com/bilgishuttle/bilgi-shuttle-web.git
+$ git clone https://github.com/LaborWorks/bilgi-shuttle-web.git
 
 # Go to app folder
 $ cd bilgi-shuttle-web
@@ -50,7 +50,7 @@ $ cd bilgi-shuttle-web
 $ npm run setup
 ```
 
-##Usage
+## Usage
 ```bash
 # Start for development
 $ npm start
@@ -64,13 +64,13 @@ $ npm test
 $ npm run build
 ```
 
-##Screenshots
+## Screenshots
 <img src="screenshots/bs_web_01.png" width="100%">
 <img src="screenshots/bs_web_02.png" width="49.5%">
 <img src="screenshots/bs_web_03.png" width="49.5%">
 
 
-##License
+## License
 
 	Copyright [2016] [Altay Aydemir]
 
